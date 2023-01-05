@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/static/css/main.970b88b7.css",
+    "main.js": "/static/js/main.a414518d.js",
+    "static/css/669.95f08159.chunk.css": "/static/css/669.95f08159.chunk.css",
+    "static/js/669.bef16384.chunk.js": "/static/js/669.bef16384.chunk.js",
+    "static/media/Inter-Bold.ttf": "/static/media/Inter-Bold.88fa7ae373b07b41ecce.ttf",
+    "static/media/Inter-SemiBold.ttf": "/static/media/Inter-SemiBold.4d56bb21f2399db8ad48.ttf",
+    "static/media/Inter-Medium.ttf": "/static/media/Inter-Medium.6dcbc9bed1ec438907ee.ttf",
+    "static/media/Inter-Light.ttf": "/static/media/Inter-Light.eec8664621fec98efb37.ttf",
+    "static/media/Inter-Regular.ttf": "/static/media/Inter-Regular.e89cb19905e7db5591b0.ttf",
+    "static/media/GothamRounded-Medium.otf": "/static/media/GothamRounded-Medium.10d88929ec344e9ef796.otf",
+    "static/media/GothamRounded-Bold.otf": "/static/media/GothamRounded-Bold.a829ff15fe2b18d9330b.otf",
+    "static/media/syd.svg": "/static/media/syd.e56f42f3043044f760124c2636393dd2.svg",
+    "static/media/whatsapp.svg": "/static/media/whatsapp.c84d6aa73a4161267f586685737b464b.svg",
+    "static/media/LOGO.svg": "/static/media/LOGO.8f8063e54114b57be4f14ee516ad40a6.svg",
+    "static/media/Instagram - Negative.svg": "/static/media/Instagram - Negative.8b6d65151861601a1c4494668d33cf95.svg",
+    "static/media/background.svg": "/static/media/background.715b6c865947251cc29ac20af5b07ecc.svg",
+    "static/media/wechat.svg": "/static/media/wechat.714e8f67105828ca33a6ff2626370b81.svg",
+    "static/media/discord-fill.svg": "/static/media/discord-fill.48b19d44523e16b17e56ebff61cf0744.svg",
+    "static/media/Twitter - Negative.svg": "/static/media/Twitter - Negative.8b7095d28680fe81e993c6897a6b5260.svg",
+    "static/media/bxl-youtube.svg.svg": "/static/media/bxl-youtube.svg.849a29e76fe6e3203a2cf1e0735c6cd0.svg",
+    "index.html": "/index.html",
+    "static/media/bxl-linkedin.svg.svg": "/static/media/bxl-linkedin.svg.7a80c7b32ea89dd2217b1c05d31b73ed.svg",
+    "static/media/bxl-facebook-circle.svg.svg": "/static/media/bxl-facebook-circle.svg.7ac4b85bc3bc2aed38a3edf474280cf8.svg",
+    "static/media/arrow-next.svg": "/static/media/arrow-next.1c318de4fcf71ce07bc95ec3a501be1b.svg",
+    "main.970b88b7.css.map": "/static/css/main.970b88b7.css.map",
+    "main.a414518d.js.map": "/static/js/main.a414518d.js.map",
+    "669.95f08159.chunk.css.map": "/static/css/669.95f08159.chunk.css.map",
+    "669.bef16384.chunk.js.map": "/static/js/669.bef16384.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.970b88b7.css",
+    "static/js/main.a414518d.js"
+  ]
+}
