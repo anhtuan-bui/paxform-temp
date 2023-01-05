@@ -1,0 +1,138 @@
+@import "../../styles/styles.scss";
+
+.home {
+  background: linear-gradient(90.46deg, #0a61b4 0.35%, #074581 99.56%);
+  position: relative;
+  top: -1px;
+
+  &__wrapper {
+    position: relative;
+    padding-top: rem(150);
+    padding-bottom: rem(200);
+    z-index: 1200;
+
+    @include larger {
+      padding-top: rem(100);
+    }
+
+    @include large {
+      padding-top: rem(80);
+    }
+
+    @include medium {
+      padding-top: rem(60);
+      padding-bottom: rem(150);
+    }
+
+    @include small {
+      padding-top: rem(40);
+      padding-bottom: rem(120);
+    }
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    img {
+      min-width: 1440px;
+      width: 100%;
+      height: 740px;
+
+      @include extraLarge {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &__content {
+    color: white;
+
+    h1 {
+      font-size: 64px;
+      font-weight: 400;
+      margin-top: 0;
+
+      @include larger {
+        font-size: 54px;
+      }
+
+      @include large {
+        font-size: 48px;
+      }
+
+      @include medium {
+        font-size: 42px;
+      }
+
+      @include small {
+        font-size: 36px;
+      }
+
+      @include extraSmall {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+.content_box {
+  display: flex;
+  gap: rem(120);
+
+  @include larger {
+    gap: rem(80);
+  }
+
+  @include large {
+    gap: rem(20);
+  }
+
+  @include medium {
+    flex-direction: column;
+  }
+
+  &__item {
+    flex: 1 1 50%;
+    h4 {
+      font-size: rem(24);
+      font-weight: 400;
+      margin-bottom: rem(28);
+
+      @include small {
+        font-size: 20px;
+      }
+    }
+
+    p {
+      font-size: rem(20);
+      font-weight: 400;
+      margin-bottom: rem(28);
+      line-height: rem(36);
+      letter-spacing: 0.008px;
+
+      @include small {
+        font-size: 14px;
+      }
+    }
+
+    img {
+      cursor: pointer;
+
+      &:first-of-type {
+        margin-right: rem(35);
+
+        @include larger {
+          margin-right: rem(20);
+        }
+
+        @include large {
+          margin-right: rem(10);
+        }
+      }
+    }
+  }
+}

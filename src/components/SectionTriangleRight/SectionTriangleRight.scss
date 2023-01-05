@@ -1,0 +1,27 @@
+@import '../../styles/styles.scss';
+
+.section_triangle_right {
+    display: block;
+    &--white {
+        fill: white;
+    }
+
+    &--dark-blue {
+        fill: #031a30;
+    }
+    &--light-blue {
+        fill: #e1edf9;
+    }
+    &--blue {
+        fill: #0a61b4;
+    }
+    &--footer {
+        fill: #e1edf9;
+    }
+    &--light-green {
+        fill: #def6ec;
+    }
+    &--green {
+        fill:#059459;
+    }
+}

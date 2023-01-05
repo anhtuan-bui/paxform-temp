@@ -1,0 +1,82 @@
+@font-face {
+  font-family: GothamRoundedBold;
+  src: url(../assets/fonts/gotham-rounded/GothamRounded-Bold.otf) format("opentype");
+  font-weight: 700;
+  font-style: bold;
+}
+@font-face {
+  font-family: GothamRoundedBold;
+  src: url(../assets/fonts/gotham-rounded/GothamRounded-Medium.otf) format("opentype");
+  font-weight: 500;
+  font-style: medium;
+}
+
+@font-face {
+  font-family: Inter;
+  src: url(../assets/fonts/Inter/static/Inter-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Inter;
+  src: url(../assets/fonts/Inter/static/Inter-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: bold;
+}
+@font-face {
+  font-family: Inter;
+  src: url(../assets/fonts/Inter/static/Inter-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-style: medium;
+}
+@font-face {
+  font-family: Inter;
+  src: url(../assets/fonts/Inter/static/Inter-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+  font-style: semibold;
+}
+@font-face {
+  font-family: Inter;
+  src: url(../assets/fonts/Inter/static/Inter-Light.ttf) format("truetype");
+  font-weight: 300;
+  font-style: light;
+}
+
+$grid__gap: rem(24);
+
+$padding__collumn: rem(16);
+$padding__collumn--x2: calc(#{$padding__collumn} * 2);
+
+$padding__collumn--large: rem(24);
+$padding__collumn--larger: rem(32);
+
+$row__gap--larger: 3rem;
+$row__gap--small: 2rem;
+
+$width__extraLarge: 1440px;
+$width__larger: 1200px;
+$width__large: 1024px;
+$width__medium: 768px;
+$width__small: 576px;
+$width__extraSmall: 375px;
+
+$font_size__desktop: 16px;
+$font_size__tablet: 14px;
+$font_size__mobile: 14px;
+$font_size__small: $font_size__mobile;
+
+$font_family__GotamRoundedBold: GothamRoundedBold;
+$font_family__Inter: Inter;
+
+$color_main__text: #031A30;
+$color_secondary__text: #2F4356;
+
+$color__primary: #0A61B4;
+$color__success: #20976c;
+
+$color__gray-blue: #F0F5FA;
+
+$color_main__blue: #0A61B4;
+
+
+

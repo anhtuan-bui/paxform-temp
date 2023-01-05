@@ -1,0 +1,132 @@
+.container {
+    margin: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 rem(140);
+    width: $width__extraLarge;
+    // @include extraLarge {
+    //   width: $width__larger;
+    // }
+    @include larger {
+        padding: 0 2rem;
+    }
+    @include large {
+        padding: 0 1rem;
+        // width: $width__medium;
+    }
+}
+
+.bottom_triangle {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    border-color: transparent transparent #f0f8ff #f0f8ff;
+    border-style: solid;
+    border-width: rem(70) 50vw;
+    height: 0px;
+    width: 0px;
+    z-index: 1000;
+    @include large {
+        border-width: rem(60) 50vw;
+    }
+    @include medium {
+        border-width: rem(50) 50vw;
+    }
+    @include small {
+        border-width: rem(40) 50vw;
+    }
+    @include extraSmall {
+        border-width: rem(30) 50vw;
+    }
+    &--dark-blue {
+        border-color: transparent transparent #031a30 #031a30;
+    }
+    &--light-blue {
+        border-color: transparent transparent #e1edf9 #e1edf9;
+    }
+    &--light-grey {
+        border-color: transparent transparent #f6f6f6 #f6f6f6;
+    }
+    &--white {
+        border-color: transparent transparent white white;
+    }
+    &--blue {
+        border-color: transparent transparent #0a61b4 #0a61b4;
+    }
+    &--footer {
+        border-color: transparent transparent #e1edf9 #e1edf9;
+    }
+    &--light-green {
+        border-color: transparent transparent #def6ec #def6ec;
+    }
+    &--green {
+        border-color: transparent transparent #059459 #059459;
+    }
+}
+
+.rtl {
+    direction: rtl;
+}
+
+.ltr {
+    direction: ltr;
+}
+
+.display-none {
+    display: none;
+}
+
+.span--hover {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 1px;
+        bottom: -2px;
+        left: 0;
+        background-color: white;
+        transform-origin: bottom left;
+        transition: transform 0.25s ease-out;
+        @include larger {
+            background-color: $color_main__text;
+        }
+        @include large {
+            background-color: transparent;
+        }
+    }
+    &:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+}
+
+.section_name {
+    font-size: rem(14);
+    letter-spacing: 0.014rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.section_title {
+    font-size: rem(38);
+    font-weight: 700;
+    line-height: rem(48);
+    margin-top: rem(24);
+    margin-bottom: rem(60);
+    @include large {
+        font-size: rem(34);
+    }
+    @include medium {
+        font-size: rem(32);
+    }
+    @include small {
+        font-size: rem(30);
+    }
+    @include extraSmall {
+        font-size: rem(28);
+    }
+}

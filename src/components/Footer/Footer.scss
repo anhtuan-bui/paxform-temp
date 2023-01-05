@@ -1,0 +1,44 @@
+@import "../../styles/styles.scss";
+
+.footer {
+  position: relative;
+  background-color: white;
+  z-index: 1200;
+  padding-top: rem(20);
+  &__container {
+    p {
+      letter-spacing: 0.008px;
+      color: $color_main__text;
+      margin-top: 0;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    gap: 5px;
+
+    @include medium {
+      flex-direction: column;
+      gap: 10px;
+    }
+    &-s {
+        @include medium {
+            display: none;
+        }
+    }
+
+    a {
+      color: $color_main__text;
+
+      &:hover {
+        color: lighten($color_main__text, 20%);
+      }
+    }
+  }
+
+  &__syd {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}

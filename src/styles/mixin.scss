@@ -1,0 +1,70 @@
+@mixin extraLarge {
+  @media (max-width: $width__extraLarge) {
+    @content;
+  }
+}
+
+@mixin larger {
+  @media (max-width: $width__larger) {
+    @content;
+  }
+}
+@mixin large {
+  @media (max-width: $width__large) {
+    @content;
+  }
+}
+@mixin medium {
+  @media (max-width: $width__medium) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media (max-width: $width__small) {
+    @content;
+  }
+}
+@mixin extraSmall {
+  @media (max-width: $width__extraSmall) {
+    @content;
+  }
+}
+
+@function rem($value) {
+  $remValue: calc($value / 16) + rem;
+  @return $remValue;
+}
+
+@mixin buttonColor($color) {
+  .button {
+    &--#{$color} {
+      color: $color;
+      border: 1px solid white;
+
+      .button__text {
+        color: color;
+      }
+
+      .button__arrow {
+        path {
+          stroke: color;
+        }
+      }
+    }
+  }
+}
+
+@mixin resetSummary {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: rem(28);
+
+  > * {
+    color: $color_main__text;
+    text-decoration: none;
+    font-weight: normal;
+  }
+}

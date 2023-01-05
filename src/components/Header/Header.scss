@@ -1,0 +1,45 @@
+@import "../../styles/styles.scss";
+
+.header {
+  background: linear-gradient(90.46deg, #0a61b4 0.35%, #074581 99.56%);
+
+  &_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.media {
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    gap: rem(24);
+
+    @include larger {
+      gap: rem(20);
+    }
+
+    @include large {
+      gap: rem(16);
+    }
+
+    @include medium {
+      gap: rem(10);
+    }
+
+    @include small {
+      gap: rem(0);
+      > :nth-child(n + 5) {
+        display: none;
+      }
+    }
+
+    @include extraSmall {
+      > :nth-child(n + 3) {
+        display: none;
+      }
+    }
+  }
+}
