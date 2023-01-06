@@ -1,0 +1,194 @@
+@import "../../styles/styles.scss";
+
+body {
+  padding-right: 0 !important;
+}
+
+.hero {
+  background: linear-gradient(90.46deg, #0a61b4 0.42%, #074581 99.63%);
+  position: relative;
+  padding-top: rem(80);
+  padding-bottom: rem(130);
+
+  &__container {
+    position: relative;
+    z-index: 1100;
+  }
+
+  &__title {
+    color: white;
+    font-size: rem(64);
+    font-weight: 400;
+    margin-top: 0;
+
+    @include larger {
+      font-size: 54px;
+    }
+
+    @include large {
+      font-size: 48px;
+    }
+
+    @include medium {
+      font-size: 42px;
+    }
+
+    @include small {
+      font-size: 36px;
+    }
+
+    @include extraSmall {
+      font-size: 28px;
+    }
+  }
+
+  &__background {
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 350px;
+      z-index: 1050;
+      min-width: 1440px;
+
+      @include extraLarge {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      @include larger {
+        top: -40px;
+      }
+
+      @include small {
+        top: -60px;
+      }
+    }
+  }
+}
+
+.content {
+  margin-top: rem(60);
+  margin-bottom: rem(60);
+
+  @include small {
+    margin-bottom: rem(20);
+  }
+  &__wrapper {
+    display: flex;
+  }
+
+  &__container {
+    flex: 1 1 75%;
+  }
+
+  h1 {
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 2rem;
+  }
+
+  h2 {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  h3 {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+
+  a {
+    color: $color__success;
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      color: lighten($color__success, 20%);
+    }
+  }
+}
+
+.sidebar {
+  flex: 1 1 25%;
+
+  @include small {
+    box-sizing: border-box;
+    padding: 1rem 2rem 1rem 1rem;
+  }
+  dl {
+    margin-top: rem(5);
+    margin-bottom: 1.5rem;
+  }
+  dt,
+  dd {
+    margin-left: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  dt {
+    font-weight: 600;
+    font-family: $font_family__GotamRoundedBold, sans-serif;
+  }
+  dd {
+    a {
+      color: $color_main__text;
+      text-decoration: none;
+
+      &:hover {
+        color: lighten($color_main__text, 20%);
+      }
+    }
+  }
+
+  &--disabled {
+    display: none;
+  }
+}
+
+.breadcrumbs {
+  margin-bottom: rem(24);
+  a,
+  p {
+    text-transform: capitalize;
+  }
+
+  a {
+    color: lighten($color_secondary__text, 20%);
+    text-decoration: none;
+    &:hover {
+      color: $color_secondary__text;
+    }
+  }
+
+  svg {
+    path {
+      stroke: lighten($color_secondary__text, 20%);
+    }
+  }
+}
+
+.mobile_button {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color__primary;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  z-index: 1500;
+  transition: 0.4s;
+  cursor: pointer;
+
+  &--disabled {
+    display: none;
+  }
+}
