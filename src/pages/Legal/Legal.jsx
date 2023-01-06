@@ -233,11 +233,13 @@ const SideBar = () => {
     );
   if (error) return <p>Error</p>;
 
-  const legalCategories = data.legalCategories.nodes;
+  let legalCategories = data.legalCategories.nodes;
+  let arraySort = [...legalCategories]
+  arraySort.sort((a, b) => b.name.localeCompare(a.name));
 
   return (
     <div className="sidebar">
-      {legalCategories.map(
+      {arraySort.map(
         (category, index) =>
           category.legals.nodes.length > 0 && (
             <dl key={index}>

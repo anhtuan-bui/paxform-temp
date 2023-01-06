@@ -69,7 +69,7 @@ export default function Header() {
             <ul>
               {socialMedia.map((item, index) => (
                 item.link && <li key={index}>
-                  <a href={item.link}>
+                  <a href={item.link} target="_blank" rel="noreferrer">
                     <IconButton aria-label={item.name}>
                       <img src={item.icon} alt={item.name} />
                     </IconButton>
