@@ -158,7 +158,7 @@ const HeroTitle = () => {
 
   return (
     <h1 className="hero__title">
-      {loading ? <Skeleton /> : data.legalBy.title}
+      {loading ? <Skeleton variant="h1"  /> : data.legalBy.title}
     </h1>
   );
 };
@@ -178,7 +178,7 @@ const ContentBox = () => {
     return (
       <div className="sidebar">
         {skeleton.map((item, index) => (
-          <Skeleton key={index} height={index %5 === 0 ? 40 : 20}/>
+          <Skeleton key={index} height={index % 5 === 0 ? 40 : 20} sx={{marginBottom: index % 5 === 0 ? '20px': ''}}/>
         ))}
       </div>
     );
