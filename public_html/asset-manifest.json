@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.970b88b7.css",
-    "main.js": "/static/js/main.a414518d.js",
-    "static/css/669.95f08159.chunk.css": "/static/css/669.95f08159.chunk.css",
-    "static/js/669.bef16384.chunk.js": "/static/js/669.bef16384.chunk.js",
+    "main.css": "/static/css/main.d2aa1f80.css",
+    "main.js": "/static/js/main.3cd56117.js",
+    "static/css/669.13bdf9b2.chunk.css": "/static/css/669.13bdf9b2.chunk.css",
+    "static/js/669.fc4c16f7.chunk.js": "/static/js/669.fc4c16f7.chunk.js",
     "static/media/Inter-Bold.ttf": "/static/media/Inter-Bold.88fa7ae373b07b41ecce.ttf",
     "static/media/Inter-SemiBold.ttf": "/static/media/Inter-SemiBold.4d56bb21f2399db8ad48.ttf",
     "static/media/Inter-Medium.ttf": "/static/media/Inter-Medium.6dcbc9bed1ec438907ee.ttf",
@@ -24,13 +24,13 @@
     "static/media/bxl-linkedin.svg.svg": "/static/media/bxl-linkedin.svg.7a80c7b32ea89dd2217b1c05d31b73ed.svg",
     "static/media/bxl-facebook-circle.svg.svg": "/static/media/bxl-facebook-circle.svg.7ac4b85bc3bc2aed38a3edf474280cf8.svg",
     "static/media/arrow-next.svg": "/static/media/arrow-next.1c318de4fcf71ce07bc95ec3a501be1b.svg",
-    "main.970b88b7.css.map": "/static/css/main.970b88b7.css.map",
-    "main.a414518d.js.map": "/static/js/main.a414518d.js.map",
-    "669.95f08159.chunk.css.map": "/static/css/669.95f08159.chunk.css.map",
-    "669.bef16384.chunk.js.map": "/static/js/669.bef16384.chunk.js.map"
+    "main.d2aa1f80.css.map": "/static/css/main.d2aa1f80.css.map",
+    "main.3cd56117.js.map": "/static/js/main.3cd56117.js.map",
+    "669.13bdf9b2.chunk.css.map": "/static/css/669.13bdf9b2.chunk.css.map",
+    "669.fc4c16f7.chunk.js.map": "/static/js/669.fc4c16f7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.970b88b7.css",
-    "static/js/main.a414518d.js"
+    "static/css/main.d2aa1f80.css",
+    "static/js/main.3cd56117.js"
   ]
 }

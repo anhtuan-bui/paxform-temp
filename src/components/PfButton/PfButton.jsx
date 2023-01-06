@@ -5,6 +5,7 @@ import "./PfButton.scss";
 export default function PfButton(props) {
   return (
     <Button
+      onClick={props.onClick}
       variant="contained"
       color="success"
       endIcon={props.endIcon}

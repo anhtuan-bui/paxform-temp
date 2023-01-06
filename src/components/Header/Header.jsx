@@ -16,42 +16,42 @@ const socialMedia = [
   {
     name: "linkedin",
     icon: linkedin,
-    link: "/",
-  },
-  {
-    name: "youtube",
-    icon: youtube,
-    link: "/",
+    link: "https://www.linkedin.com/company/paxform/",
   },
   {
     name: "facebook",
     icon: facebook,
-    link: "/",
-  },
-  {
-    name: "discord",
-    icon: discord,
-    link: "/",
+    link: "",
   },
   {
     name: "twitter",
     icon: twitter,
-    link: "/",
+    link: "",
   },
   {
     name: "instagram",
     icon: instagram,
-    link: "/",
+    link: "",
+  },
+  {
+    name: "youtube",
+    icon: youtube,
+    link: "",
+  },
+  {
+    name: "discord",
+    icon: discord,
+    link: "",
   },
   {
     name: "wechat",
     icon: wechat,
-    link: "/",
+    link: "",
   },
   {
     name: "whatsapp",
     icon: whatsapp,
-    link: "/",
+    link: "",
   },
 ];
 
@@ -68,7 +68,7 @@ export default function Header() {
           <div className="media">
             <ul>
               {socialMedia.map((item, index) => (
-                <li key={index}>
+                item.link && <li key={index}>
                   <a href={item.link}>
                     <IconButton aria-label={item.name}>
                       <img src={item.icon} alt={item.name} />

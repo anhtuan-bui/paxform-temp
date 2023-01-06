@@ -116,6 +116,7 @@
 
       @include small {
         font-size: 14px;
+        line-height: rem(26);
       }
     }
 
@@ -123,7 +124,7 @@
       cursor: pointer;
 
       &:first-of-type {
-        margin-right: rem(35);
+        margin-right: rem(24);
 
         @include larger {
           margin-right: rem(20);
