@@ -45,7 +45,7 @@ export default class Legal extends Component {
     const footerHeight = footer.offsetHeight;
 
     if (pageAlignHeight < windowHeight - headerHeight - footerHeight - 20) {
-      pageAlign.style.height = `${
+      pageAlign.style.minHeight = `${
         windowHeight - headerHeight - footerHeight
       }px`;
     }
@@ -80,13 +80,11 @@ export default class Legal extends Component {
 
     //move the mobile button to the right edge of the sidebar
     const mobileButton = document.querySelector(".mobile_button");
-    const sidebar = document.querySelector(".sidebar");
     if (open) {
-      mobileButton.style.right = `${sidebar.offsetWidth}px`;
+      mobileButton.style.transform = "rotate(-180deg)"
     } else {
-      mobileButton.style.right = "0";
+      mobileButton.style.transform = "rotate(0)"
     }
-
     this.legal.drawerOpen = open;
     this.setState(this.legal);
   };
@@ -158,7 +156,7 @@ const HeroTitle = () => {
 
   return (
     <h1 className="hero__title">
-      {loading ? <Skeleton variant="h1"  /> : data.legalBy.title}
+      {loading ? <Skeleton variant="h1" /> : data.legalBy.title}
     </h1>
   );
 };
@@ -178,7 +176,14 @@ const ContentBox = () => {
     return (
       <div className="sidebar">
         {skeleton.map((item, index) => (
-          <Skeleton key={index} height={index % 5 === 0 ? 40 : 20} sx={{marginBottom: index % 5 === 0 ? '20px': ''}}/>
+          <Skeleton
+            key={index}
+            height={index % 5 === 0 ? 40 : 20}
+            sx={{
+              marginBottom: index % 5 === 0 ? "20px" : "",
+              marginTop: index % 5 === 0 ? "20px" : "",
+            }}
+          />
         ))}
       </div>
     );
@@ -222,19 +227,27 @@ const PfBreadcrumbs = () => {
 
 const SideBar = () => {
   const { loading, error, data } = useQuery(GET_LEGAL_CATEGORIES);
-  const skeleton = [1, 2, 3, 4, 5, 6];
+  const skeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   if (loading)
     return (
       <div className="sidebar">
         {skeleton.map((item, index) => (
-          <Skeleton key={index} width={100} />
+          <Skeleton
+            key={index}
+            width={100}
+            height={index % 3 === 0 ? 32 : 24}
+            sx={{
+              marginBottom: index % 3 === 0 ? "5px" : "",
+              marginTop: index % 3 === 0 ? "5px" : "",
+            }}
+          />
         ))}
       </div>
     );
   if (error) return <p>Error</p>;
 
-  let legalCategories = data.legalCategories.nodes;
-  let arraySort = [...legalCategories]
+  const legalCategories = data.legalCategories.nodes;
+  let arraySort = [...legalCategories];
   arraySort.sort((a, b) => b.name.localeCompare(a.name));
 
   return (
