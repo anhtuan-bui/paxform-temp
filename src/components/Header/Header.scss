@@ -12,6 +12,23 @@
       display: block;
     }
   }
+
+  &--scrolled {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: none;
+    background-color: white;
+    z-index: 1500;
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0,0.25);
+
+    svg {
+      path {
+        fill: $color__primary;
+      }
+    }
+  }
 }
 
 .media {

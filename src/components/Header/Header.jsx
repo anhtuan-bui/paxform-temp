@@ -1,61 +1,77 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Header.scss";
 import { ReactComponent as Logo } from "../../assets/images/LOGO.svg";
-import linkedin from "../../assets/images/bxl-linkedin.svg.svg";
-import youtube from "../../assets/images/bxl-youtube.svg.svg";
-import facebook from "../../assets/images/bxl-facebook-circle.svg.svg";
-import discord from "../../assets/images/discord-fill.svg";
-import twitter from "../../assets/images/Twitter - Negative.svg";
-import instagram from "../../assets/images/Instagram - Negative.svg";
-import wechat from "../../assets/images/wechat.svg";
-import whatsapp from "../../assets/images/whatsapp.svg";
+import { ReactComponent as LinkedIn } from "../../assets/images/bxl-linkedin.svg.svg";
+import { ReactComponent as YouTube } from "../../assets/images/bxl-youtube.svg.svg";
+import { ReactComponent as Facebook } from "../../assets/images/bxl-facebook-circle.svg.svg";
+import { ReactComponent as Discord } from "../../assets/images/discord-fill.svg";
+import { ReactComponent as Twitter } from "../../assets/images/Twitter - Negative.svg";
+import { ReactComponent as Instagram } from "../../assets/images/Instagram - Negative.svg";
+import { ReactComponent as WeChat } from "../../assets/images/wechat.svg";
+import { ReactComponent as Whatsapp } from "../../assets/images/whatsapp.svg";
 import { IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const socialMedia = [
   {
     name: "linkedin",
-    icon: linkedin,
+    icon: <LinkedIn />,
     link: "https://www.linkedin.com/company/paxform/",
   },
   {
     name: "facebook",
-    icon: facebook,
+    icon: <Facebook />,
     link: "",
   },
   {
     name: "twitter",
-    icon: twitter,
+    icon: <Twitter />,
     link: "",
   },
   {
     name: "instagram",
-    icon: instagram,
+    icon: <Instagram />,
     link: "",
   },
   {
     name: "youtube",
-    icon: youtube,
+    icon: <YouTube />,
     link: "",
   },
   {
     name: "discord",
-    icon: discord,
+    icon: <Discord />,
     link: "",
   },
   {
     name: "wechat",
-    icon: wechat,
+    icon: <WeChat />,
     link: "",
   },
   {
     name: "whatsapp",
-    icon: whatsapp,
+    icon: <Whatsapp />,
     link: "",
   },
 ];
 
 export default function Header() {
+  const handleScroll = () => {
+    const header = document.querySelector(".header");
+    if (window.scrollY >= 20) {
+      header.classList.add("header--scrolled");
+    } else {
+      header.classList.remove("header--scrolled");
+    }
+    console.log(header);
+  };
+  useEffect(() => {
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+
+    // return window.removeEventListener("scroll", handleScroll)
+  });
+
   return (
     <header className="header">
       <div className="container">
@@ -67,15 +83,18 @@ export default function Header() {
           </div>
           <div className="media">
             <ul>
-              {socialMedia.map((item, index) => (
-                item.link && <li key={index}>
-                  <a href={item.link} target="_blank" rel="noreferrer">
-                    <IconButton aria-label={item.name}>
-                      <img src={item.icon} alt={item.name} />
-                    </IconButton>
-                  </a>
-                </li>
-              ))}
+              {socialMedia.map(
+                (item, index) =>
+                  item.link && (
+                    <li key={index}>
+                      <a href={item.link} target="_blank" rel="noreferrer">
+                        <IconButton aria-label={item.name}>
+                          {item.icon}
+                        </IconButton>
+                      </a>
+                    </li>
+                  )
+              )}
             </ul>
           </div>
         </div>

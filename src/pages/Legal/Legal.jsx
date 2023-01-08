@@ -81,9 +81,9 @@ export default class Legal extends Component {
     //move the mobile button to the right edge of the sidebar
     const mobileButton = document.querySelector(".mobile_button");
     if (open) {
-      mobileButton.style.transform = "rotate(-180deg)"
+      mobileButton.style.transform = "rotate(-180deg)";
     } else {
-      mobileButton.style.transform = "rotate(0)"
+      mobileButton.style.transform = "rotate(0)";
     }
     this.legal.drawerOpen = open;
     this.setState(this.legal);
@@ -226,6 +226,8 @@ const PfBreadcrumbs = () => {
 };
 
 const SideBar = () => {
+  const pathnames = useLocation().pathname.split("/");
+  const slug = pathnames[pathnames.length - 1];
   const { loading, error, data } = useQuery(GET_LEGAL_CATEGORIES);
   const skeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   if (loading)
@@ -259,7 +261,10 @@ const SideBar = () => {
               <dt>{category.name}</dt>
               {category.legals.nodes.map((legal, index) => (
                 <dd key={index}>
-                  <Link to={`/legal/${category.slug}/${legal.slug}`}>
+                  <Link
+                    className={legal.slug === slug ? "link--active" : undefined}
+                    to={`/legal/${category.slug}/${legal.slug}`}
+                  >
                     {legal.title}
                   </Link>
                 </dd>

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.637fb4b2.css",
-    "main.js": "/static/js/main.59de56f3.js",
+    "main.css": "/static/css/main.2c19a618.css",
+    "main.js": "/static/js/main.29e149d8.js",
     "static/css/40.5bbecbe1.chunk.css": "/static/css/40.5bbecbe1.chunk.css",
     "static/js/40.19324d72.chunk.js": "/static/js/40.19324d72.chunk.js",
     "static/media/Inter-Bold.ttf": "/static/media/Inter-Bold.88fa7ae373b07b41ecce.ttf",
@@ -19,19 +19,19 @@
     "static/media/wechat.svg": "/static/media/wechat.714e8f67105828ca33a6ff2626370b81.svg",
     "static/media/discord-fill.svg": "/static/media/discord-fill.48b19d44523e16b17e56ebff61cf0744.svg",
     "static/media/Twitter - Negative.svg": "/static/media/Twitter - Negative.8b7095d28680fe81e993c6897a6b5260.svg",
+    "index.html": "/index.html",
     "static/media/upline.svg": "/static/media/upline.5fd99fb7f976eb6cde8b92999c096807.svg",
     "static/media/bxl-youtube.svg.svg": "/static/media/bxl-youtube.svg.849a29e76fe6e3203a2cf1e0735c6cd0.svg",
-    "index.html": "/index.html",
     "static/media/bxl-linkedin.svg.svg": "/static/media/bxl-linkedin.svg.7a80c7b32ea89dd2217b1c05d31b73ed.svg",
     "static/media/bxl-facebook-circle.svg.svg": "/static/media/bxl-facebook-circle.svg.7ac4b85bc3bc2aed38a3edf474280cf8.svg",
     "static/media/arrow-next.svg": "/static/media/arrow-next.1c318de4fcf71ce07bc95ec3a501be1b.svg",
-    "main.637fb4b2.css.map": "/static/css/main.637fb4b2.css.map",
-    "main.59de56f3.js.map": "/static/js/main.59de56f3.js.map",
+    "main.2c19a618.css.map": "/static/css/main.2c19a618.css.map",
+    "main.29e149d8.js.map": "/static/js/main.29e149d8.js.map",
     "40.5bbecbe1.chunk.css.map": "/static/css/40.5bbecbe1.chunk.css.map",
     "40.19324d72.chunk.js.map": "/static/js/40.19324d72.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.637fb4b2.css",
-    "static/js/main.59de56f3.js"
+    "static/css/main.2c19a618.css",
+    "static/js/main.29e149d8.js"
   ]
 }

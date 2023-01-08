@@ -192,3 +192,7 @@ body {
     display: none;
   }
 }
+
+.link--active {
+  color: $color__primary !important;
+}
