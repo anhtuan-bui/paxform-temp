@@ -6,7 +6,7 @@ import "./Footer.scss";
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="container">
+      <div className="container footer--margin-top">
         <div className="footer__container">
           <p className="footer__copyright">
             <span>© 2023 Paxform. All rights reserved.</span>

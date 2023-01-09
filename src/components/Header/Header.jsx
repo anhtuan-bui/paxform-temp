@@ -58,7 +58,7 @@ const socialMedia = [
 export default function Header() {
   const handleScroll = () => {
     const header = document.querySelector(".header");
-    if (window.scrollY >= 20) {
+    if (window.scrollY >= 72) {
       header.classList.add("header--scrolled");
     } else {
       header.classList.remove("header--scrolled");

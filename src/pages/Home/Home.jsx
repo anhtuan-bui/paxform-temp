@@ -33,7 +33,7 @@ export default class Home extends Component {
     const footer = document.querySelector(".footer");
     const footerHeight = footer.offsetHeight;
 
-    if (pageAlignHeight < windowHeight - headerHeight - footerHeight - 20) {
+    if (pageAlignHeight < windowHeight - headerHeight - footerHeight) {
       pageAlign.style.minHeight = `${
         windowHeight - headerHeight - footerHeight
       }px`;

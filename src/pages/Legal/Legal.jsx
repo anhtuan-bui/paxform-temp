@@ -44,7 +44,7 @@ export default class Legal extends Component {
     const footer = document.querySelector(".footer");
     const footerHeight = footer.offsetHeight;
 
-    if (pageAlignHeight < windowHeight - headerHeight - footerHeight - 20) {
+    if (pageAlignHeight < windowHeight - headerHeight - footerHeight - 40) {
       pageAlign.style.minHeight = `${
         windowHeight - headerHeight - footerHeight
       }px`;
