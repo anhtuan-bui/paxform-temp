@@ -38,14 +38,14 @@ const FooterTermLink = () => {
   const legalCategories = data.legalCategories?.nodes;
   let arraySort = [...legalCategories];
   arraySort.sort((a, b) => b.name.localeCompare(a.name));
-  
-  arraySort.forEach((item) => {
-    categorySlug = item.slug;
-    if (item.legals.nodes.length > 0) {
-      linkSlug = item.legals.nodes[0].slug;
-      return;
+
+  for (let i = 0; i < arraySort.length; i ++){
+    categorySlug = arraySort[i].slug;
+    if (arraySort[i].legals.nodes.length > 0) {
+      linkSlug = arraySort[i].legals.nodes[0].slug;
+      break;
     }
-  });
+  }
 
   return (
     <Link to={`/legal/${categorySlug}/${linkSlug}`}>
