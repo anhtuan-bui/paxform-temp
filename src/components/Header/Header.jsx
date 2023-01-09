@@ -21,17 +21,17 @@ const socialMedia = [
   {
     name: "facebook",
     icon: <Facebook />,
-    link: "",
+    link: "https://www.facebook.com/profile.php?id=100064254243686",
   },
   {
     name: "twitter",
     icon: <Twitter />,
-    link: "",
+    link: "https://twitter.com/paxform",
   },
   {
     name: "instagram",
     icon: <Instagram />,
-    link: "",
+    link: "https://www.instagram.com/pax.form/",
   },
   {
     name: "youtube",
