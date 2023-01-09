@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.1b2ab33e.css",
-    "main.js": "/static/js/main.d3d00f64.js",
+    "main.css": "/static/css/main.2f9ea823.css",
+    "main.js": "/static/js/main.cde87785.js",
     "static/css/40.5bbecbe1.chunk.css": "/static/css/40.5bbecbe1.chunk.css",
     "static/js/40.ce08bd34.chunk.js": "/static/js/40.ce08bd34.chunk.js",
     "static/media/Inter-Bold.ttf": "/static/media/Inter-Bold.88fa7ae373b07b41ecce.ttf",
@@ -25,13 +25,13 @@
     "static/media/bxl-linkedin.svg.svg": "/static/media/bxl-linkedin.svg.7a80c7b32ea89dd2217b1c05d31b73ed.svg",
     "static/media/bxl-facebook-circle.svg.svg": "/static/media/bxl-facebook-circle.svg.7ac4b85bc3bc2aed38a3edf474280cf8.svg",
     "static/media/arrow-next.svg": "/static/media/arrow-next.1c318de4fcf71ce07bc95ec3a501be1b.svg",
-    "main.1b2ab33e.css.map": "/static/css/main.1b2ab33e.css.map",
-    "main.d3d00f64.js.map": "/static/js/main.d3d00f64.js.map",
+    "main.2f9ea823.css.map": "/static/css/main.2f9ea823.css.map",
+    "main.cde87785.js.map": "/static/js/main.cde87785.js.map",
     "40.5bbecbe1.chunk.css.map": "/static/css/40.5bbecbe1.chunk.css.map",
     "40.ce08bd34.chunk.js.map": "/static/js/40.ce08bd34.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1b2ab33e.css",
-    "static/js/main.d3d00f64.js"
+    "static/css/main.2f9ea823.css",
+    "static/js/main.cde87785.js"
   ]
 }

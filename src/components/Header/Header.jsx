@@ -56,19 +56,13 @@ const socialMedia = [
 ];
 
 export default function Header() {
-  const handleScroll = () => {
-    const header = document.querySelector(".header");
-    if (window.scrollY >= 72) {
-      header.classList.add("header--scrolled");
-    } else {
-      header.classList.remove("header--scrolled");
-    }
-  };
   useEffect(() => {
     handleScroll();
     window.addEventListener("scroll", handleScroll);
 
-    // return window.removeEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   });
 
   return (
@@ -101,3 +95,12 @@ export default function Header() {
     </header>
   );
 }
+
+const handleScroll = () => {
+  const header = document.querySelector(".header");
+  if (window.scrollY >= 72) {
+    header.classList.add("header--scrolled");
+  } else {
+    header.classList.remove("header--scrolled");
+  }
+};

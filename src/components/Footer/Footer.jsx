@@ -27,20 +27,28 @@ export default function Footer() {
 }
 
 const FooterTermLink = () => {
+  let categorySlug = "";
+  let linkSlug = "";
   const { loading, data } = useQuery(GET_LEGAL_CATEGORIES);
+
   if (loading) {
     return <Skeleton width={200} />;
   }
-  
-  const legalCategories = data?.legalCategories?.nodes;
+
+  const legalCategories = data.legalCategories?.nodes;
   let arraySort = [...legalCategories];
   arraySort.sort((a, b) => b.name.localeCompare(a.name));
-  let list = arraySort?.map((item) => item.legals.nodes);
-  list = list.flat(1);
-  const slug = list[0].slug;
+  
+  arraySort.forEach((item) => {
+    categorySlug = item.slug;
+    if (item.legals.nodes.length > 0) {
+      linkSlug = item.legals.nodes[0].slug;
+      return;
+    }
+  });
 
   return (
-    <Link to={`/legal/mobile-app/${slug}`}>
+    <Link to={`/legal/${categorySlug}/${linkSlug}`}>
       Read our privacy policy, terms of use and other legal agreements
     </Link>
   );

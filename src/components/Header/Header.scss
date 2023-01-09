@@ -3,6 +3,8 @@
 .header {
   background: linear-gradient(90.46deg, #0a61b4 0.35%, #074581 99.56%);
   transition: 0.4s ease-in-out;
+  position: relative;
+  z-index: 1150;
 
   &_container {
     display: flex;
@@ -21,8 +23,7 @@
     width: 100%;
     background: none;
     background-color: white;
-    z-index: 1150;
-    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0,0.25);
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.25);
 
     svg {
       path {
