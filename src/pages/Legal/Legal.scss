@@ -70,13 +70,14 @@ body {
 
 .content {
   margin-top: rem(60);
-  margin-bottom: rem(60);
 
   @include small {
     margin-bottom: rem(20);
   }
   &__wrapper {
     display: flex;
+    padding-bottom: rem(60);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   }
 
   &__container {
