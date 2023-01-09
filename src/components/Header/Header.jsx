@@ -63,7 +63,6 @@ export default function Header() {
     } else {
       header.classList.remove("header--scrolled");
     }
-    console.log(header);
   };
   useEffect(() => {
     handleScroll();

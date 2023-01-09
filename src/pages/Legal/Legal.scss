@@ -21,6 +21,7 @@ body {
     font-size: rem(64);
     font-weight: 400;
     margin-top: 0;
+    text-transform: capitalize;
 
     @include larger {
       font-size: 54px;
@@ -77,6 +78,7 @@ body {
   }
   &__wrapper {
     display: flex;
+    gap: rem(20);
     padding-bottom: rem(60);
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   }
@@ -92,13 +94,15 @@ body {
   }
 
   h2 {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 25px;
+    margin-top: 1.75rem;
   }
 
   h3 {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 20px;
+    margin-top: 1.5rem;
   }
 
   p {
@@ -141,9 +145,10 @@ body {
     a {
       color: $color_main__text;
       text-decoration: none;
+      text-transform: capitalize;
 
       &:hover {
-        color: lighten($color_main__text, 20%);
+        color: #555;
       }
     }
   }

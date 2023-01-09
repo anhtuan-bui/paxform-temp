@@ -156,7 +156,7 @@ const HeroTitle = () => {
 
   return (
     <h1 className="hero__title">
-      {loading ? <Skeleton variant="h1" /> : data.legalBy.title}
+      {loading ? <Skeleton variant="h1" /> : data.legalBy?.title.toLowerCase()}
     </h1>
   );
 };
@@ -191,7 +191,7 @@ const ContentBox = () => {
   return (
     <div
       dangerouslySetInnerHTML={{
-        __html: data?.legalBy.content,
+        __html: data?.legalBy?.content,
       }}
     ></div>
   );
@@ -219,7 +219,11 @@ const PfBreadcrumbs = () => {
         </Link>
       ))}
       <Typography color="text.primary">
-        {loading ? <Skeleton width={100} /> : data?.legalBy.title}
+        {loading ? (
+          <Skeleton width={100} />
+        ) : (
+          data?.legalBy?.title.toLowerCase()
+        )}
       </Typography>
     </Breadcrumbs>
   );
@@ -265,7 +269,7 @@ const SideBar = () => {
                     className={legal.slug === slug ? "link--active" : undefined}
                     to={`/legal/${category.slug}/${legal.slug}`}
                   >
-                    {legal.title}
+                    {legal?.title.toLowerCase()}
                   </Link>
                 </dd>
               ))}
