@@ -22,6 +22,8 @@ export default function Footer() {
           <p className="footer__copyright">
             <span>© 2023 Paxform. All rights reserved.</span>
             <span className="footer__copyright-s">|</span>
+            <Link to="/contact">Contact Us</Link>
+            <span className="footer__copyright-s">|</span>
             <FooterTermLink />
           </p>
           <p className="footer__syd">
@@ -47,7 +49,7 @@ const FooterTermLink = () => {
   let arraySort = [...legalCategories];
   arraySort.sort((a, b) => b.name.localeCompare(a.name));
 
-  for (let i = 0; i < arraySort.length; i ++){
+  for (let i = 0; i < arraySort.length; i++) {
     categorySlug = arraySort[i].slug;
     if (arraySort[i].legals.nodes.length > 0) {
       linkSlug = arraySort[i].legals.nodes[0].slug;

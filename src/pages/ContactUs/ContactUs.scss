@@ -7,24 +7,32 @@ $color_green: #20976c;
 .contact {
   .hero {
     position: relative;
+    top: -2px;
     background: linear-gradient(90.46deg, #0a61b4 0.35%, #074581 99.56%);
     &__wrapper {
       position: relative;
-      padding-top: rem(80);
-      padding-right: rem(730);
-      padding-bottom: rem(190);
+      padding-top: rem(20);
+      padding-bottom: rem(100);
       text-align: center;
       box-sizing: border-box;
-      @include large {
-        padding-right: 0;
-        padding-bottom: 30%;
+      display: flex;
+      gap: rem(60);
+
+      @include larger {
+        gap: rem(28);
       }
       @include medium {
-        padding-top: rem(10);
-        padding-bottom: 80%;
+        // padding-top: 0;
+        padding-bottom: 50%;
+        flex-direction: column;
       }
+
       @include small {
-        padding-top: 0;
+        padding-bottom: 70%;
+      }
+
+      @include extraSmall {
+        padding-bottom: 100%;
       }
     }
     &__name {
@@ -34,20 +42,13 @@ $color_green: #20976c;
       font-weight: 600;
       font-size: rem(14);
       text-transform: uppercase;
-      @include medium {
-        margin-top: rem(50);
-        margin-bottom: rem(40);
-      }
-      @include small {
-        margin-top: rem(50);
-      }
     }
     &__content {
-      padding: 0 $padding__collumn;
+      // padding: 0 $padding__collumn;
       text-align: left;
       color: $color_white;
-      @include large {
-        padding: 0 5%;
+      flex: 1 1 50%;
+      @include medium {
         text-align: center;
       }
       h1,
@@ -81,30 +82,37 @@ $color_green: #20976c;
     }
     .form__box {
       position: absolute;
-      top: rem(40);
-      right: rem(156);
-      width: rem(530);
-      padding: rem(40);
+      top: 0;
+      right: 0;
+      width: 100%;
+      padding: rem(32);
       border-radius: rem(24);
       background: $color_white;
       box-shadow: 0px 20px 30px rgba(3, 26, 48, 0.08);
       box-sizing: border-box;
       text-align: left;
       z-index: 1001;
-      @include large {
-        top: 48%;
-        right: 20%;
-        width: 60%;
-      }
+      // @include large {
+      //   top: 48%;
+      //   right: 20%;
+      //   width: 60%;
+      // }
       @include medium {
-        top: 40%;
-        right: 10%;
+        // top: 40%;
+        // right: 10%;
         width: 80%;
+        left: 50%;
+        transform: translateX(-50%);
       }
       @include small {
-        right: 5%;
-        width: 90%;
+        width: 100%;
       }
+
+      &-wrapper {
+        flex: 1 1 50%;
+        position: relative;
+      }
+
       & > form {
         & > label {
           display: block;
@@ -157,18 +165,10 @@ $color_green: #20976c;
 
   .help {
     position: relative;
-    padding-top: rem(150);
-    padding-bottom: rem(100);
+    padding-top: rem(200);
+    padding-bottom: rem(64);
     background: $color_white;
-    @include large {
-      padding-top: rem(400);
-    }
-    @include medium {
-      padding-top: rem(150);
-    }
-    @include small {
-      padding-top: rem(300);
-    }
+
     &-name {
       display: block;
       padding: 0 $padding__collumn;
@@ -197,13 +197,12 @@ $color_green: #20976c;
     &__wrapper {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 0;
+      gap: rem(28);
       @include small {
         grid-template-columns: repeat(1, 1fr);
       }
     }
     &__box {
-      padding: $padding__collumn;
       &__inner {
         padding: rem(24);
         border-radius: rem(16);

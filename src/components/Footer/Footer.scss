@@ -25,12 +25,12 @@
     display: flex;
     gap: 5px;
 
-    @include medium {
+    @include large {
       flex-direction: column;
       gap: 10px;
     }
     &-s {
-      @include medium {
+      @include large {
         display: none;
       }
     }
@@ -39,7 +39,7 @@
       color: $color_main__text;
 
       &:hover {
-        color: lighten($color_main__text, 20%);
+        color: $color__success;
       }
     }
   }
