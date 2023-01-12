@@ -6,6 +6,10 @@
   z-index: 1200;
   padding: rem(20) 0;
 
+  &--deactivate {
+    display: none;
+  }
+
   &__container {
     padding-top: 20px;
 

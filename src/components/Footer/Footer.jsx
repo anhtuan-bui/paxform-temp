@@ -1,12 +1,20 @@
 import { useQuery } from "@apollo/client";
 import { Skeleton } from "@mui/material";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import syd from "../../assets/images/syd.svg";
 import { GET_LEGAL_CATEGORIES } from "../../lib/graphqlQuery";
 import "./Footer.scss";
 
 export default function Footer() {
+  const location = useLocation().pathname.split("/");
+  const notFound = location[location.length - 1];
+
+  if (notFound === "not-found") {
+    // hide footer on not found page
+    return null;
+  }
+
   return (
     <footer className="footer">
       <div className="container footer--margin-top">

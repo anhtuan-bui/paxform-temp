@@ -1,0 +1,81 @@
+@import "../../styles/styles.scss";
+
+.not_found {
+  color: white;
+  position: relative;
+  top: 0px;
+  background: linear-gradient(90.15deg, #0a61b4 0.35%, #074581 100.1%);
+
+  &__code {
+    margin-top: 0;
+    margin-bottom: rem(63);
+    font-size: rem(300);
+    font-weight: 400;
+    // line-height: rem(360);
+    text-align: center;
+    span {
+      color: #20976c;
+    }
+
+    @include larger {
+      font-size: rem(260);
+    }
+    @include large {
+      font-size: rem(220);
+    }
+    @include medium {
+      font-size: rem(180);
+    }
+    @include small {
+      font-size: rem(140);
+      margin-bottom: rem(33);
+    }
+    @include extraSmall {
+      font-size: rem(100);
+    }
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  &__title {
+    font-size: rem(38);
+    line-height: rem(48);
+    margin-top: rem(0);
+    margin-bottom: rem(20);
+
+    @include larger {
+      font-size: rem(36);
+    }
+
+    @include large {
+      font-size: rem(34);
+    }
+
+    @include medium {
+      font-size: rem(32);
+      line-height: rem(38);
+    }
+
+    @include small {
+      font-size: rem(30);
+    }
+
+    @include extraSmall {
+      font-size: rem(24);
+    }
+  }
+  &__description {
+    font-size: rem(16);
+    margin-top: rem(20);
+    margin-bottom: rem(26);
+  }
+}
