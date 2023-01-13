@@ -8,8 +8,16 @@ body {
   background: linear-gradient(90.46deg, #0a61b4 0.42%, #074581 99.63%);
   position: relative;
   top: -1px;
-  padding-top: rem(80);
-  padding-bottom: rem(130);
+  padding-top: rem(150);
+  padding-bottom: rem(150);
+
+  @include extraSmall {
+    padding-bottom: rem(130);
+  }
+
+  @include small {
+    // padding: rem(130) 0;
+  }
 
   &__container {
     position: relative;
@@ -24,33 +32,33 @@ body {
     text-transform: capitalize;
 
     @include larger {
-      font-size: 54px;
+      font-size: 60px;
     }
 
     @include large {
-      font-size: 48px;
+      font-size: 54px;
     }
 
     @include medium {
-      font-size: 42px;
+      font-size: 48px;
     }
 
     @include small {
-      font-size: 36px;
+      font-size: 42px;
     }
 
     @include extraSmall {
-      font-size: 28px;
+      font-size: 36px;
     }
   }
 
   &__background {
     img {
       position: absolute;
-      top: 0;
+      top: 72px;
       left: 0;
       width: 100%;
-      height: 350px;
+      height: rem(330);
       z-index: 1050;
       min-width: 1440px;
 
@@ -59,12 +67,8 @@ body {
         transform: translateX(-50%);
       }
 
-      @include larger {
-        top: -40px;
-      }
-
-      @include small {
-        top: -60px;
+      @include extraSmall {
+        height: rem(310);
       }
     }
   }
@@ -108,7 +112,7 @@ body {
   p {
     line-height: 1.8;
   }
-  
+
   li {
     line-height: 2.2;
   }

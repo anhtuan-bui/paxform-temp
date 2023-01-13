@@ -4,6 +4,7 @@
   background: linear-gradient(90.46deg, #0a61b4 0.35%, #074581 99.56%);
   position: relative;
   top: -1px;
+  padding-top: rem(72);
 
   &__wrapper {
     position: relative;
@@ -32,7 +33,7 @@
 
   &__background {
     position: absolute;
-    top: 0;
+    top: rem(72);
     left: 0;
     width: 100%;
     img {

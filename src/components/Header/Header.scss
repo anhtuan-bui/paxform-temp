@@ -2,7 +2,8 @@
 
 .header {
   background: linear-gradient(90.46deg, #0a61b4 0.35%, #074581 99.56%);
-  position: relative;
+  position: absolute;
+  width: 100%;
   z-index: 1150;
 
   &_container {
