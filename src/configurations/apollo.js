@@ -2,7 +2,7 @@ import { ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
 const httpLink = createHttpLink({
-    uri: "https://v1.paxfolio.com/graphql",
+    uri: "https://paxform.com/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
