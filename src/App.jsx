@@ -63,7 +63,7 @@ function App() {
                 <Route path="/legal" element={<Legal />} />
                 <Route path="/contact" element={<ContactUs />} />
                 <Route path="/legal/:categorySlug/:slug" element={<Legal />} />
-                {/* <Route path="*" element={<NotFound />} /> */}
+                <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>
           </Suspense>
