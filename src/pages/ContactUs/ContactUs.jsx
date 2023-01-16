@@ -15,8 +15,10 @@ export default class ContactUs extends Component {
               <p className="hero__name">Contact Us</p>
               <h1 className="hero__title">We’d love to hear from you</h1>
               <p className="hero__description">
-                If you have any questions about Paxdorm please contact us in
-                form beside and we will respond immediately.
+                We value your feedback and are here to assist you with any
+                questions or concerns you may have. Please fill out the form,
+                and one of our representatives will get back to you as soon as
+                possible.
               </p>
             </div>
             <div className="form__box-wrapper">
