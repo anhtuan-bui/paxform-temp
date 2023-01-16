@@ -143,7 +143,7 @@ const ContactForm = () => {
       <label>
         <strong>Email</strong>
         <input
-          type="text"
+          type="email"
           placeholder="jondoe@email.com"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
