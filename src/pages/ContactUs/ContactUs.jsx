@@ -1,8 +1,11 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import "./ContactUs.scss";
 import Button from "../../components/Button/Button";
+import post from "../../lib/restApi";
 
 export default class ContactUs extends Component {
+  async componentDidMount() {}
+
   render() {
     return (
       <main className="contact">
@@ -18,41 +21,7 @@ export default class ContactUs extends Component {
             </div>
             <div className="form__box-wrapper">
               <div className="form__box">
-                <form>
-                  <label>
-                    <strong>Full name</strong>
-                    <input type="text" placeholder="John Doe" name="" />
-                  </label>
-                  <label>
-                    <strong>Email</strong>
-                    <input type="text" placeholder="jondoe@email.com" name="" />
-                  </label>
-                  <label>
-                    <strong>Company name</strong>
-                    <input type="text" placeholder="acme corp" name="" />
-                  </label>
-                  <label>
-                    <strong>Company size</strong>
-                    <select name="">
-                      <option value="" disabled selected>
-                        Select a range of employees
-                      </option>
-                      <option value="1 - 10">1 - 10</option>
-                      <option value="10 - 100">10 - 100</option>
-                      <option value="100 - 1000">100 - 1000</option>
-                      <option value="Over 1000">Over 1000</option>
-                    </select>
-                  </label>
-                  <label>
-                    <strong>Message</strong>
-                    <textarea placeholder="Tell your project or anything else we can help"></textarea>
-                  </label>
-                  <Button
-                    text="Send Message"
-                    type="flat arrow submit"
-                    color="white"
-                  />
-                </form>
+                <ContactForm />
               </div>
             </div>
           </div>
@@ -114,9 +83,110 @@ export default class ContactUs extends Component {
               </div>
             </div>
           </div>
-          {/* <div className="bottom_triangle bottom_triangle--footer"></div> */}
         </section>
       </main>
     );
   }
 }
+
+const ContactForm = () => {
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [companySize, setCompanySize] = useState("");
+  const [message, setMessage] = useState("");
+  const [alert, setAlert] = useState("");
+  const [sent, setSent] = useState(false);
+
+  let response = {};
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    response = await post("wp/v2/contact", {
+      title: fullName,
+      content: message,
+      email: email,
+      company_name: companyName,
+      company_size: companySize,
+      status: "private",
+      checked: false,
+    });
+
+    if (response.id) {
+      setFullName("");
+      setEmail("");
+      setCompanyName("");
+      setCompanySize("");
+      setMessage("");
+
+      setSent(true);
+      setAlert("Messenge sent successfully");
+    } else {
+      setAlert(response.message);
+      setSent(false);
+    }
+  };
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        <strong>Full name</strong>
+        <input
+          type="text"
+          placeholder="John Doe"
+          onChange={(e) => setFullName(e.target.value)}
+          value={fullName}
+        />
+      </label>
+      <label>
+        <strong>Email</strong>
+        <input
+          type="text"
+          placeholder="jondoe@email.com"
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
+        />
+      </label>
+      <label>
+        <strong>Company name</strong>
+        <input
+          type="text"
+          placeholder="acme corp"
+          onChange={(e) => setCompanyName(e.target.value)}
+          value={companyName}
+        />
+      </label>
+      <label>
+        <strong>Company size</strong>
+        <select
+          onChange={(e) => setCompanySize(e.target.value)}
+          value={companySize}
+        >
+          <option value="" disabled>
+            Select a range of employees
+          </option>
+          <option value="1 - 10">1 - 10</option>
+          <option value="10 - 100">10 - 100</option>
+          <option value="100 - 1000">100 - 1000</option>
+          <option value="Over 1000">Over 1000</option>
+        </select>
+      </label>
+      <label>
+        <strong>Message</strong>
+        <textarea
+          placeholder="Tell your project or anything else we can help"
+          onChange={(e) => setMessage(e.target.value)}
+          value={message}
+        ></textarea>
+      </label>
+      <p
+        className={`form__message ${
+          sent ? "form__message--success" : "form__message--error"
+        }`}
+      >
+        {alert}
+      </p>
+      <Button text="Send Message" type="flat arrow submit" color="white" />
+    </form>
+  );
+};

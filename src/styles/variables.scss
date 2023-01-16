@@ -1,12 +1,14 @@
 @font-face {
   font-family: GothamRoundedBold;
-  src: url(../assets/fonts/gotham-rounded/GothamRounded-Bold.otf) format("opentype");
+  src: url(../assets/fonts/gotham-rounded/GothamRounded-Bold.otf)
+    format("opentype");
   font-weight: 700;
   font-style: bold;
 }
 @font-face {
   font-family: GothamRoundedBold;
-  src: url(../assets/fonts/gotham-rounded/GothamRounded-Medium.otf) format("opentype");
+  src: url(../assets/fonts/gotham-rounded/GothamRounded-Medium.otf)
+    format("opentype");
   font-weight: 500;
   font-style: medium;
 }
@@ -68,17 +70,15 @@ $font_size__small: $font_size__mobile;
 $font_family__GotamRoundedBold: GothamRoundedBold;
 $font_family__Inter: Inter;
 
-$color_main__text: #031A30;
-$color_secondary__text: #2F4356;
+$color_main__text: #031a30;
+$color_secondary__text: #2f4356;
 
-$color__primary: #0A61B4;
+$color__primary: #0a61b4;
 $color__success: #20976c;
+$color__error: #d00000;
 
-$color__gray-blue: #F0F5FA;
+$color__gray-blue: #f0f5fa;
 
-$color_main__blue: #0A61B4;
-
+$color_main__blue: #0a61b4;
 
 $color_main__dark-gunmetal--opacity-01: hsla(210, 11%, 15%, 0.1);
-
-

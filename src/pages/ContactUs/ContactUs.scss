@@ -277,3 +277,19 @@ $color_green: #20976c;
     }
   }
 }
+
+
+.form {
+
+  &__message {
+    font-size: 0.875rem;
+
+    &--success {
+      color: $color__success;
+    }
+
+    &--error {
+      color: $color__error;
+    }
+  }
+}
