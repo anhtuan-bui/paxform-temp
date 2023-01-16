@@ -4,6 +4,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import syd from "../../assets/images/syd.svg";
 import { GET_LEGAL_CATEGORIES } from "../../lib/graphqlQuery";
+import NotFound from "../../pages/NotFound/NotFound";
 import "./Footer.scss";
 
 export default function Footer() {
@@ -39,7 +40,7 @@ export default function Footer() {
 const FooterTermLink = () => {
   let categorySlug = "";
   let linkSlug = "";
-  const { loading, data } = useQuery(GET_LEGAL_CATEGORIES);
+  const { loading, error, data } = useQuery(GET_LEGAL_CATEGORIES);
 
   if (loading) {
     return <Skeleton width={200} />;
