@@ -2,11 +2,9 @@ import React, { Component, useState } from "react";
 import "./ContactUs.scss";
 import Button from "../../components/Button/Button";
 import post from "../../lib/restApi";
-import {ReactComponent as ArrowRight} from "../../assets/images/arrow-right.svg";
+import { ReactComponent as ArrowRight } from "../../assets/images/arrow-right.svg";
 
 export default class ContactUs extends Component {
-  async componentDidMount() {}
-
   render() {
     return (
       <main className="contact">
@@ -30,8 +28,8 @@ export default class ContactUs extends Component {
           </div>
           <div className="bottom_triangle bottom_triangle--white"></div>
         </section>
-        <section className="help"> 
-          <div className="container"> 
+        <section className="help">
+          <div className="container">
             <span className="help-name">GET IN TOUCH</span>
             <h2 className="help-title">Our teams are here to help</h2>
             <div className="help__wrapper">
@@ -79,16 +77,18 @@ export default class ContactUs extends Component {
                   <p className="help__box-desc">
                     Available 9am - 5pm AEST, Monday - Friday
                   </p>
-                  <a className="help__box-link" href="/">
+                  <a
+                    id="chat_now"
+                    className="help__box-link"
+                    href="#chat_now"
+                  >
                     Chat now <ArrowRight />
                   </a>
                 </div>
               </div>
             </div>
-           </div>
+          </div>
         </section>
-
-
       </main>
     );
   }
