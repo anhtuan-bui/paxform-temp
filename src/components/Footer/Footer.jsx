@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { Skeleton } from "@mui/material";
-import React from "react";
+import React, { createRef, Fragment, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import syd from "../../assets/images/syd.svg";
 import { GET_LEGAL_CATEGORIES } from "../../lib/graphqlQuery";
@@ -10,8 +10,8 @@ export default function Footer() {
   const location = useLocation().pathname.split("/");
   const notFound = location[location.length - 1];
 
+  // hide footer on not found page
   if (notFound === "not-found") {
-    // hide footer on not found page
     return null;
   }
 
@@ -23,7 +23,6 @@ export default function Footer() {
             <span>© 2023 Paxform. All rights reserved.</span>
             <span className="footer__copyright-s">|</span>
             <Link to="/contact">Contact Us</Link>
-            <span className="footer__copyright-s">|</span>
             <FooterTermLink />
           </p>
           <p className="footer__syd">
@@ -39,10 +38,31 @@ export default function Footer() {
 const FooterTermLink = () => {
   let categorySlug = "";
   let linkSlug = "";
-  const { loading, data } = useQuery(GET_LEGAL_CATEGORIES);
+  const { loading, error, data } = useQuery(GET_LEGAL_CATEGORIES);
+
+  const legalLinkRef = createRef();
+
+  useEffect(() => {
+    if (!legalLinkRef.current) return;
+
+    const legalLink = legalLinkRef.current;
+    legalLink.addEventListener("click", handleLegalLinkClick);
+
+    return () => {
+      legalLink.removeEventListener("click", handleLegalLinkClick);
+    };
+  });
+
+  const handleLegalLinkClick = () => {
+    window.scrollTo(0, 350);
+  };
 
   if (loading) {
     return <Skeleton width={200} />;
+  }
+
+  if (error) {
+    return;
   }
 
   const legalCategories = data.legalCategories?.nodes;
@@ -58,8 +78,11 @@ const FooterTermLink = () => {
   }
 
   return (
-    <Link to={`/legal/${categorySlug}/${linkSlug}`}>
-      Read our privacy policy, terms of use and other legal agreements
-    </Link>
+    <Fragment>
+      <span className="footer__copyright-s">|</span>
+      <Link ref={legalLinkRef} to={`/legal/${categorySlug}/${linkSlug}`}>
+        Read our privacy policy, terms of use and other legal agreements
+      </Link>
+    </Fragment>
   );
 };
