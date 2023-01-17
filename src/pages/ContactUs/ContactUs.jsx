@@ -2,6 +2,7 @@ import React, { Component, useState } from "react";
 import "./ContactUs.scss";
 import Button from "../../components/Button/Button";
 import post from "../../lib/restApi";
+import {ReactComponent as ArrowRight} from "../../assets/images/arrow-right.svg";
 
 export default class ContactUs extends Component {
   async componentDidMount() {}
@@ -29,8 +30,8 @@ export default class ContactUs extends Component {
           </div>
           <div className="bottom_triangle bottom_triangle--white"></div>
         </section>
-        <section className="help">
-          <div className="container">
+        <section className="help"> 
+          <div className="container"> 
             <span className="help-name">GET IN TOUCH</span>
             <h2 className="help-title">Our teams are here to help</h2>
             <div className="help__wrapper">
@@ -43,8 +44,8 @@ export default class ContactUs extends Component {
                   <p className="help__box-desc">
                     Message and data rates may apply
                   </p>
-                  <a className="help__box-link" href="/">
-                    Message us
+                  <a className="help__box-link" href="sms:3099231230">
+                    Message us <ArrowRight />
                   </a>
                 </div>
               </div>
@@ -53,8 +54,8 @@ export default class ContactUs extends Component {
                   <em className="help__box-icon"></em>
                   <strong className="help__box-title">Send us an email</strong>
                   <p className="help__box-desc">We’d love to hear from you!</p>
-                  <a className="help__box-link" href="/">
-                    Email us
+                  <a className="help__box-link" href="mailto:hello@paxform.com">
+                    Email us <ArrowRight />
                   </a>
                 </div>
               </div>
@@ -62,11 +63,11 @@ export default class ContactUs extends Component {
                 <div className="help__box__inner">
                   <em className="help__box-icon"></em>
                   <strong className="help__box-title">
-                    Call us at 1-893-909-7845
+                    Call us at +61 1300 181 346
                   </strong>
                   <p className="help__box-desc">We’d love to hear from you!</p>
-                  <a className="help__box-link" href="/">
-                    Call us
+                  <a className="help__box-link" href="tel:+611300181346">
+                    Call us <ArrowRight />
                   </a>
                 </div>
               </div>
@@ -76,16 +77,18 @@ export default class ContactUs extends Component {
                     Chat with a specialist
                   </strong>
                   <p className="help__box-desc">
-                    Available 7am-11pm CT, 7 days a week
+                    Available 9am - 5pm AEST, Monday - Friday
                   </p>
                   <a className="help__box-link" href="/">
-                    Chat now
+                    Chat now <ArrowRight />
                   </a>
                 </div>
               </div>
             </div>
-          </div>
+           </div>
         </section>
+
+
       </main>
     );
   }

@@ -243,15 +243,27 @@ $color_green: #20976c;
       &-link {
         display: inline-block;
         padding-right: rem(15);
-        background: url("../../assets/images/ico_arrow_green.png") no-repeat
-          right 60%;
+        
         background-size: rem(5);
         font-size: rem(20);
         text-decoration: none;
         color: $color_green;
+
+        svg {
+          path {
+            stroke: $color_green;
+          }
+        }
+
         &:hover {
           transform: all 0.3s ease-out;
           color: $color_blue;
+
+          svg {
+            path {
+              stroke: $color_blue;
+            }
+          }
         }
       }
       &:nth-child(1) {
