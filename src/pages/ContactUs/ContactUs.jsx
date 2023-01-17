@@ -138,7 +138,7 @@ const ContactForm = () => {
         <strong>Full name</strong>
         <input
           type="text"
-          placeholder="John Doe"
+          placeholder="Full Name"
           onChange={(e) => setFullName(e.target.value)}
           value={fullName}
         />
@@ -147,7 +147,7 @@ const ContactForm = () => {
         <strong>Email</strong>
         <input
           type="email"
-          placeholder="jondoe@email.com"
+          placeholder="example@email.com"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
         />
@@ -156,7 +156,7 @@ const ContactForm = () => {
         <strong>Company name</strong>
         <input
           type="text"
-          placeholder="acme corp"
+          placeholder="Company Name"
           onChange={(e) => setCompanyName(e.target.value)}
           value={companyName}
         />
@@ -179,7 +179,7 @@ const ContactForm = () => {
       <label>
         <strong>Message</strong>
         <textarea
-          placeholder="Tell your project or anything else we can help"
+          placeholder="Message"
           onChange={(e) => setMessage(e.target.value)}
           value={message}
         ></textarea>
