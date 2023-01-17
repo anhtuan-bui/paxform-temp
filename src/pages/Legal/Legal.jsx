@@ -11,6 +11,8 @@ import {
   GET_LEGAL_CATEGORIES,
 } from "../../lib/graphqlQuery";
 
+import { ReactComponent as TableOfContentButton } from "../../assets/icons/list_alt.svg";
+
 export default class Legal extends Component {
   legal = { drawerOpen: false, data: {} };
 
@@ -122,7 +124,8 @@ export default class Legal extends Component {
                     : this.toggleDrawer(true)
                 }
               >
-                <ArrowNext />
+                <TableOfContentButton />
+                {/* <ArrowNext /> */}
               </div>
               <div className="content__wrapper">
                 <SideBar />

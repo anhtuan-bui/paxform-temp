@@ -130,10 +130,11 @@ body {
 
 .sidebar {
   flex: 1 1 25%;
-
+  
   @include small {
     box-sizing: border-box;
     padding: 1rem 2rem 1rem 1rem;
+    padding-top: rem(86);
   }
   dl {
     margin-top: rem(5);
@@ -202,6 +203,14 @@ body {
   z-index: 1500;
   transition: 0.4s;
   cursor: pointer;
+
+  svg {
+    height: 30px;
+    width: 30px;
+    path {
+      fill: white;
+    }
+  }
 
   &--disabled {
     display: none;
