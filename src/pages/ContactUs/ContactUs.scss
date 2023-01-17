@@ -145,6 +145,17 @@ $color_green: #20976c;
             font-size: rem(14);
             box-sizing: border-box;
           }
+
+          & > select {
+            appearance: none;
+            background: url("../../assets/images/arrow-down.svg")
+              no-repeat;
+            background-size: 12px;
+            background-position: calc(100% - 20px) center;
+            background-repeat: no-repeat;
+            background-color: $color_light-grey;
+          }
+
           & > input:focus,
           & > select:focus,
           & > textarea:focus {
@@ -243,7 +254,7 @@ $color_green: #20976c;
       &-link {
         display: inline-block;
         padding-right: rem(15);
-        
+
         background-size: rem(5);
         font-size: rem(20);
         text-decoration: none;
@@ -290,9 +301,7 @@ $color_green: #20976c;
   }
 }
 
-
 .form {
-
   &__message {
     font-size: 0.875rem;
 

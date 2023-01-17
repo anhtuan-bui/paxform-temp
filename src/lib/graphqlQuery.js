@@ -1,6 +1,4 @@
 import { gql } from "@apollo/client";
-const USERNAME = process.env.REACT_APP_CLIENT_USER_NAME;
-const PASSWORD = process.env.REACT_APP_CLIENT_PASSWORD;
 
 const GET_LEGAL_BY_SLUG = gql`
   query GetLegalBySlug($slug: String!) {

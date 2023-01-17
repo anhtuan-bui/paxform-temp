@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.142b9253.css",
+    "main.css": "/static/css/main.8c5c278c.css",
     "main.js": "/static/js/main.da7a14b3.js",
     "static/media/Inter-Bold.ttf": "/static/media/Inter-Bold.88fa7ae373b07b41ecce.ttf",
     "static/media/Inter-SemiBold.ttf": "/static/media/Inter-SemiBold.4d56bb21f2399db8ad48.ttf",
@@ -19,21 +19,22 @@
     "static/media/wechat.svg": "/static/media/wechat.714e8f67105828ca33a6ff2626370b81.svg",
     "static/media/discord-fill.svg": "/static/media/discord-fill.48b19d44523e16b17e56ebff61cf0744.svg",
     "static/media/icon-chat.svg": "/static/media/icon-chat.2d8f48368cb74cb2d607.svg",
-    "index.html": "/index.html",
     "static/media/Twitter - Negative.svg": "/static/media/Twitter - Negative.8b7095d28680fe81e993c6897a6b5260.svg",
+    "index.html": "/index.html",
     "static/media/upline.svg": "/static/media/upline.5fd99fb7f976eb6cde8b92999c096807.svg",
     "static/media/icon-email.svg": "/static/media/icon-email.4c97a88a3b0dce3d2eaa.svg",
     "static/media/triangle right.svg": "/static/media/triangle right.26e9c002316c2ff98fa6e7692db57712.svg",
     "static/media/bxl-youtube.svg.svg": "/static/media/bxl-youtube.svg.849a29e76fe6e3203a2cf1e0735c6cd0.svg",
     "static/media/bxl-linkedin.svg.svg": "/static/media/bxl-linkedin.svg.7a80c7b32ea89dd2217b1c05d31b73ed.svg",
     "static/media/bxl-facebook-circle.svg.svg": "/static/media/bxl-facebook-circle.svg.7ac4b85bc3bc2aed38a3edf474280cf8.svg",
+    "static/media/arrow-down.svg": "/static/media/arrow-down.f77d3cfd44cefad01563.svg",
     "static/media/arrow-right.svg": "/static/media/arrow-right.f9596711ac7c60bcb8b20f4d481c4d3c.svg",
     "static/media/arrow-next.svg": "/static/media/arrow-next.1c318de4fcf71ce07bc95ec3a501be1b.svg",
-    "main.142b9253.css.map": "/static/css/main.142b9253.css.map",
+    "main.8c5c278c.css.map": "/static/css/main.8c5c278c.css.map",
     "main.da7a14b3.js.map": "/static/js/main.da7a14b3.js.map"
   },
   "entrypoints": [
-    "static/css/main.142b9253.css",
+    "static/css/main.8c5c278c.css",
     "static/js/main.da7a14b3.js"
   ]
 }
