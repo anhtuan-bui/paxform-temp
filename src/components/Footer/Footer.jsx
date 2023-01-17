@@ -9,6 +9,23 @@ import "./Footer.scss";
 export default function Footer() {
   const location = useLocation().pathname.split("/");
   const notFound = location[location.length - 1];
+  
+  const linkRef = createRef();
+
+  useEffect(() => {
+    if (!linkRef.current) return;
+
+    const link = linkRef.current;
+    link.addEventListener("click", handleLegalLinkClick);
+
+    return () => {
+      link.removeEventListener("click", handleLegalLinkClick);
+    };
+  });
+
+  const handleLegalLinkClick = () => {
+    window.scrollTo(0, 0);
+  };
 
   // hide footer on not found page
   if (notFound === "not-found") {
@@ -22,7 +39,7 @@ export default function Footer() {
           <p className="footer__copyright">
             <span>© 2023 Paxform. All rights reserved.</span>
             <span className="footer__copyright-s">|</span>
-            <Link to="/contact">Contact Us</Link>
+            <Link ref={linkRef} to="/contact">Contact Us</Link>
             <FooterTermLink />
           </p>
           <p className="footer__syd">
@@ -40,21 +57,21 @@ const FooterTermLink = () => {
   let linkSlug = "";
   const { loading, error, data } = useQuery(GET_LEGAL_CATEGORIES);
 
-  const legalLinkRef = createRef();
+  const linkRef = createRef();
 
   useEffect(() => {
-    if (!legalLinkRef.current) return;
+    if (!linkRef.current) return;
 
-    const legalLink = legalLinkRef.current;
-    legalLink.addEventListener("click", handleLegalLinkClick);
+    const link = linkRef.current;
+    link.addEventListener("click", handleLegalLinkClick);
 
     return () => {
-      legalLink.removeEventListener("click", handleLegalLinkClick);
+      link.removeEventListener("click", handleLegalLinkClick);
     };
   });
 
   const handleLegalLinkClick = () => {
-    window.scrollTo(0, 350);
+    window.scrollTo(0, 300);
   };
 
   if (loading) {
@@ -80,7 +97,7 @@ const FooterTermLink = () => {
   return (
     <Fragment>
       <span className="footer__copyright-s">|</span>
-      <Link ref={legalLinkRef} to={`/legal/${categorySlug}/${linkSlug}`}>
+      <Link ref={linkRef} to={`/legal/${categorySlug}/${linkSlug}`}>
         Read our privacy policy, terms of use and other legal agreements
       </Link>
     </Fragment>
