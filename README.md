@@ -1,8 +1,24 @@
-# Getting Started with Create React App
+# Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+For collaborators, install
+* [Git CLI](https://git-scm.com/downloads)
+* [Nodejs](https://nodejs.org/en/) - newst LTS version
+* [Yarn](https://classic.yarnpkg.com/en/) - package manager
 
-## Available Scripts
+## Installation
+
+To install the project:
+
+1. Create a new folder named e.g: "paxfolio"
+2. Open Git Bash at the folder "paxfolio" - right click on the folder, look for Open Git Bash...
+3. Type command `git init` to initiate git folder
+4. Type command `git remote add origin https://github.com/anhtuan-bui/paxfolio.git` to set name for the repository
+5. Type command `git pull origin master` to pull files in the repository to your folder at "paxforlio"
+6. Type command `cd paxfolio` to open the folder
+7. Type command `yarn install` to gather dependencies for the projects.
+8. After finishing installation, type command `yarn start` to view the website locally.
+
+## Available Scripts using Yarn
 
 In the project directory, you can run:
 
@@ -14,14 +30,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `yarn build`
 
-Builds the app for production to the `build` folder.\
+Builds the app for production to the `public_html` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.\
@@ -29,42 +40,17 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+### Important notes for macOS
+### `yarn build-mac`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Builds the app for production to the `public_html` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Chaging information of the website
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Some of the information in this code is hard-coded, while other parts are pulled from a Wordpress Rest API. If you want to make changes to any of this information, you can use the **Search** function in Visual Studio Code (accessed with the shortcut `ctrl + shift + f` in Windows or `command + shift + f` on MacOS) to locate it in the code. If you can't find it in the code, it's likely pulled from the API, so you will need to look for it there. 
