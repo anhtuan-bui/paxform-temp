@@ -37,12 +37,12 @@ export default class ContactUs extends Component {
                 <div className="help__box__inner">
                   <em className="help__box-icon"></em>
                   <strong className="help__box-title">
-                    Text us 309-923-1230
+                    Text us +61 482 084 480
                   </strong>
                   <p className="help__box-desc">
                     Message and data rates may apply
                   </p>
-                  <a className="help__box-link" href="sms:3099231230">
+                  <a className="help__box-link" href="sms:+61482084480">
                     Message us <ArrowRight />
                   </a>
                 </div>
