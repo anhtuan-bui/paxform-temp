@@ -1,7 +1,7 @@
 import client from "../configurations/apollo";
 import { LOGIN_CLIENT } from "./graphqlQuery";
 
-const USERNAME = process.env.REACT_APP_CLIENT_USER_NAME;
+const USERNAME = process.env.REACT_APP_CLIENT_USERNAME;
 const PASSWORD = process.env.REACT_APP_CLIENT_PASSWORD;
 
 const parseJwt = (token) => {
