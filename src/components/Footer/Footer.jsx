@@ -79,7 +79,6 @@ const FooterTermLink = () => {
   }
 
   if (error) {
-    console.log(error)
     return;
   }
 

@@ -76,7 +76,7 @@ const GET_POSTS = gql`
 
 const LOGIN_CLIENT = gql`
   mutation LoginUser {
-    login(input: { username: "client", password: "client" }) {
+    login(input: { username: "client", password: "#h9P*Sf3S9TC#N3Stlg!k0u%" }) {
       authToken
       user {
         id
