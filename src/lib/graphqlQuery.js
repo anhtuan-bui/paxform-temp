@@ -75,8 +75,8 @@ const GET_POSTS = gql`
 `;
 
 const LOGIN_CLIENT = gql`
-  mutation LoginUser {
-    login(input: { username: "client", password: "#h9P*Sf3S9TC#N3Stlg!k0u%" }) {
+  mutation LoginUser($username: String!, $password: String!) {
+    login(input: { username: $username, password: $password }) {
       authToken
       user {
         id
