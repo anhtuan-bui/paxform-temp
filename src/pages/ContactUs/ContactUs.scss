@@ -92,14 +92,8 @@ $color_green: #20976c;
       box-sizing: border-box;
       text-align: left;
       z-index: 1001;
-      // @include large {
-      //   top: 48%;
-      //   right: 20%;
-      //   width: 60%;
-      // }
+      
       @include medium {
-        // top: 40%;
-        // right: 10%;
         width: 80%;
         left: 50%;
         transform: translateX(-50%);

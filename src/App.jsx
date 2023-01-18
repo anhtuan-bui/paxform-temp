@@ -41,19 +41,14 @@ const theme = createTheme({
 function App() {
   const MINUTE_MS = 250000;
 
+  getToken();
   useEffect(() => {
-    const timeout = setTimeout(() => {
+    const interval = setInterval(() => {
       getToken();
-      timeoutRefresh();
     }, MINUTE_MS);
-    const timeoutRefresh = () => {
-      setTimeout(() => {
-        getToken();
-        timeoutRefresh();
-      }, MINUTE_MS);
-    };
+
     return () => {
-      clearTimeout(timeout);
+      clearInterval(interval);
     };
   }, []);
 
