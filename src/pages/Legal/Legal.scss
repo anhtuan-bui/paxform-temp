@@ -55,7 +55,7 @@ body {
   &__background {
     img {
       position: absolute;
-      top: 72px;
+      bottom: 0;
       left: 0;
       width: 100%;
       height: rem(330);
@@ -67,8 +67,12 @@ body {
         transform: translateX(-50%);
       }
 
-      @include extraSmall {
+      @include large {
         height: rem(310);
+      }
+
+      @include extraSmall {
+        height: rem(280);
       }
     }
   }
