@@ -19,7 +19,7 @@ const login = () => {
       variables: { username: USERNAME, password: PASSWORD },
     })
     .then((result) =>
-      localStorage.setItem("clientToken", result.data.login.authToken)
+      localStorage.setItem("clientToken", result.data.login.refreshToken)
     );
 };
 

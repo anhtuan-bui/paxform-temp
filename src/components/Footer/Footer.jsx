@@ -36,7 +36,7 @@ export default function Footer() {
 }
 
 const FooterTermLink = () => {
-  let categorySlug = "";
+  // let categorySlug = "";
   let linkSlug = "";
   const { loading, error, data } = useQuery(GET_LEGAL_CATEGORIES);
 
@@ -53,7 +53,7 @@ const FooterTermLink = () => {
   arraySort.sort((a, b) => b.name.localeCompare(a.name));
 
   for (let i = 0; i < arraySort.length; i++) {
-    categorySlug = arraySort[i].slug;
+    // categorySlug = arraySort[i].slug;
     if (arraySort[i].legals.nodes.length > 0) {
       linkSlug = arraySort[i].legals.nodes[0].slug;
       break;
@@ -63,7 +63,7 @@ const FooterTermLink = () => {
   return (
     <Fragment>
       <span className="footer__copyright-s">|</span>
-      <a href={`/legal/${categorySlug}/${linkSlug}`}>
+      <a href={`/legal/${linkSlug}`}>
         Read our privacy policy, terms of use and other legal agreements
       </a>
     </Fragment>

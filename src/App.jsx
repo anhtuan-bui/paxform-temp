@@ -39,18 +39,19 @@ const theme = createTheme({
 });
 
 function App() {
-  const MINUTE_MS = 250000;
+  const MINUTE_MS = 300000;
 
   getToken();
   useEffect(() => {
     const interval = setInterval(() => {
+      localStorage.removeItem("clientToken");
       getToken();
     }, MINUTE_MS);
 
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  });
 
   return (
     <ThemeProvider theme={theme}>
@@ -62,6 +63,7 @@ function App() {
                 <Route index element={<Home />} />
                 <Route path="/legal" element={<Legal />} />
                 <Route path="/contact" element={<ContactUs />} />
+                <Route path="/legal/:slug" element={<Legal />} />
                 <Route path="/legal/:categorySlug/:slug" element={<Legal />} />
                 <Route path="*" element={<NotFound />} />
               </Route>

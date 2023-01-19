@@ -270,7 +270,7 @@ const SideBar = () => {
                 <dd key={index}>
                   <Link
                     className={legal.slug === slug ? "link--active" : undefined}
-                    to={`/legal/${category.slug}/${legal.slug}`}
+                    to={`/legal/${legal.slug}`}
                   >
                     {legal?.title.toLowerCase()}
                   </Link>
