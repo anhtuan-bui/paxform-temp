@@ -1,7 +1,7 @@
 import { ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-const URI = process.env.REACT_APP_WP_GQL_URL
+const URI = process.env.REACT_APP_WP_GQL_URL;
 
 const httpLink = createHttpLink({
     uri: URI,

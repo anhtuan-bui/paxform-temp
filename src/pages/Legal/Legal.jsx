@@ -12,6 +12,8 @@ import {
 } from "../../lib/graphqlQuery";
 
 import { ReactComponent as TableOfContentButton } from "../../assets/icons/list_alt.svg";
+import client from "../../configurations/apollo";
+import { useEffect } from "react";
 
 export default class Legal extends Component {
   legal = { drawerOpen: false, data: {} };
@@ -236,6 +238,15 @@ const SideBar = () => {
   const pathnames = useLocation().pathname.split("/");
   const slug = pathnames[pathnames.length - 1];
   const { loading, error, data } = useQuery(GET_LEGAL_CATEGORIES);
+  useEffect(() => {
+    if (data) {
+      data.legalCategories.nodes.forEach((category) => {
+        category.legals.nodes.forEach((page) => {
+          prefetchLegalBySlug(page.slug);
+        });
+      });
+    }
+  });
   const skeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   if (loading)
     return (
@@ -271,6 +282,7 @@ const SideBar = () => {
                   <Link
                     className={legal.slug === slug ? "link--active" : undefined}
                     to={`/legal/${legal.slug}`}
+                    // onMouseOver={() => prefetchLegalBySlug(legal.slug)}
                   >
                     {legal?.title.toLowerCase()}
                   </Link>
@@ -281,4 +293,13 @@ const SideBar = () => {
       )}
     </div>
   );
+};
+
+const prefetchLegalBySlug = async (slug) => {
+  await client.query({
+    query: GET_LEGAL_BY_SLUG,
+    variables: {
+      slug: slug,
+    },
+  });
 };

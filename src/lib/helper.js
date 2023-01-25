@@ -11,4 +11,9 @@ function withRouter(Component) {
   return ComponentWithRouterProp;
 }
 
+export const scrollTop = () => {
+  window.scrollTo(0, 0);
+};
+
+
 export default withRouter;

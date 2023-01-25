@@ -12,6 +12,8 @@ import { ReactComponent as Whatsapp } from "../../assets/images/whatsapp.svg";
 import { IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
 
+import {scrollTop} from '../../lib/helper';
+
 const socialMedia = [
   {
     name: "linkedin",
@@ -71,7 +73,7 @@ export default function Header() {
         <div className="header_container">
           <div className="logo">
             <Link to="/">
-              <Logo />
+              <Logo onClick={scrollTop}/>
             </Link>
           </div>
           <div className="media">
