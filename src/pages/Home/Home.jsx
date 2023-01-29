@@ -36,13 +36,20 @@ export default class Home extends Component {
     }
   };
 
-  navigateToGooglePlay = () => {
+  navigateToGooglePlay () {
     // navigate to an external link
     window.open(
       "https://play.google.com/store/apps/details?id=com.paxform&hl=en_AU&gl=US",
       "_blank"
     );
   };
+
+  navigatToAppleStore() {
+    window.open(
+      "https://apps.apple.com/app/paxform/id1565492350",
+      "_blank"
+    );
+  }
   
   navigateToRegister = () => {
     // navigate to an external link
@@ -74,7 +81,7 @@ export default class Home extends Component {
                         alt="google play"
                         onClick={this.navigateToGooglePlay}
                       />
-                      <img src={appstore} alt="appstore" />
+                      <img src={appstore} alt="appstore" onClick={this.navigatToAppleStore}/>
                     </div>
                     <div className="content_box__item content_box__item--register">
                       <h4>Register your organization</h4>
