@@ -44,10 +44,8 @@ export default class Legal extends Component {
     const footer = document.querySelector(".footer");
     const footerHeight = footer.offsetHeight;
 
-    if (pageAlignHeight < windowHeight  - footerHeight - 40) {
-      pageAlign.style.minHeight = `${
-        windowHeight  - footerHeight
-      }px`;
+    if (pageAlignHeight < windowHeight - footerHeight - 40) {
+      pageAlign.style.minHeight = `${windowHeight - footerHeight}px`;
     }
   };
 
@@ -170,6 +168,7 @@ const ContentBox = () => {
     variables: {
       slug: slug,
     },
+    fetchPolicy: "cache-first",
   });
   const skeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   if (loading)
@@ -209,6 +208,7 @@ const PfBreadcrumbs = () => {
     variables: {
       slug: slug,
     },
+    fetchPolicy: "cache-first",
   });
 
   return (
@@ -232,7 +232,9 @@ const PfBreadcrumbs = () => {
 const SideBar = () => {
   const pathnames = useLocation().pathname.split("/");
   const slug = pathnames[pathnames.length - 1];
-  const { loading, error, data } = useQuery(GET_LEGAL_CATEGORIES);
+  const { loading, error, data } = useQuery(GET_LEGAL_CATEGORIES, {
+    fetchPolicy: "cache-first",
+  });
   useEffect(() => {
     if (data) {
       data.legalCategories.nodes.forEach((category) => {
