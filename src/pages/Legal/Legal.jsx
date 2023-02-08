@@ -38,17 +38,13 @@ export default class Legal extends Component {
     // get window height
     const windowHeight = window.innerHeight;
 
-    // get header height
-    const header = document.querySelector(".header");
-    const headerHeight = header.offsetHeight;
-
     // get footer height
     const footer = document.querySelector(".footer");
     const footerHeight = footer.offsetHeight;
 
-    if (pageAlignHeight < windowHeight - headerHeight - footerHeight - 40) {
+    if (pageAlignHeight < windowHeight  - footerHeight - 40) {
       pageAlign.style.minHeight = `${
-        windowHeight - headerHeight - footerHeight
+        windowHeight  - footerHeight
       }px`;
     }
   };
@@ -125,7 +121,6 @@ export default class Legal extends Component {
                 }
               >
                 <TableOfContentButton />
-                {/* <ArrowNext /> */}
               </div>
               <div className="content__wrapper">
                 <SideBar />

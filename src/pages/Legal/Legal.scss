@@ -11,13 +11,6 @@ body {
   padding-top: rem(150);
   padding-bottom: rem(150);
 
-  @include extraSmall {
-    padding-bottom: rem(130);
-  }
-
-  @include small {
-    // padding: rem(130) 0;
-  }
 
   &__container {
     position: relative;
