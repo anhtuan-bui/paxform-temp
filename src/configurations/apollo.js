@@ -1,5 +1,6 @@
 import { ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+import { LocalStorageWrapper, persistCache } from "apollo3-cache-persist";
 
 const URI = process.env.REACT_APP_WP_GQL_URL;
 
@@ -18,9 +19,17 @@ const authLink = setContext((_, { headers }) => {
     };
 });
 
+const cache = new InMemoryCache();
+
+await persistCache({
+    cache,
+    storage: new LocalStorageWrapper(window.localStorage),
+  });
+  
+
 const client = new ApolloClient({
     link: authLink.concat(httpLink),
-    cache: new InMemoryCache(),
+    cache: cache,
 });
 
 export default client;
