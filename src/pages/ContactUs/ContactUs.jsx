@@ -1,8 +1,9 @@
-import React, { Component, useState } from "react";
+import React, { Component, createRef, useEffect, useState } from "react";
 import "./ContactUs.scss";
 import Button from "../../components/Button/Button";
 import post from "../../lib/restApi";
 import { ReactComponent as ArrowRight } from "../../assets/images/arrow-right.svg";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default class ContactUs extends Component {
   render() {
@@ -77,11 +78,7 @@ export default class ContactUs extends Component {
                   <p className="help__box-desc">
                     Available 9am - 5pm AEST, Monday - Friday
                   </p>
-                  <a
-                    id="chat_now"
-                    className="help__box-link"
-                    href="#chat_now"
-                  >
+                  <a id="chat_now" className="help__box-link" href="#chat_now">
                     Chat now <ArrowRight />
                   </a>
                 </div>
@@ -95,6 +92,9 @@ export default class ContactUs extends Component {
 }
 
 const ContactForm = () => {
+  const sitekey = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
+  const secretKey = process.env.REACT_APP_RECAPTCHA_SECRET_KEY;
+
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [companyName, setCompanyName] = useState("");
@@ -102,21 +102,47 @@ const ContactForm = () => {
   const [message, setMessage] = useState("");
   const [alert, setAlert] = useState("");
   const [sent, setSent] = useState(false);
+  const [captcha, setCaptcha] = useState(null);
+
+  const recaptchaRef = createRef();
 
   let response = {};
+
+  const fetchCaptcha = async () => {
+    const options = {
+      method: "POST",
+    };
+
+    const captchaToken = recaptchaRef.current.getValue();
+
+    const res = await fetch(
+      `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captchaToken}`,
+      options
+    );
+    // const data = await response.json();
+    console.log(res);
+    setCaptcha(res.ok);
+  };
+
+  const handleRecaptchaChange = async () => {
+    await fetchCaptcha();
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    response = await post("wp/v2/contact", {
-      title: fullName,
-      content: message,
-      email: email,
-      company_name: companyName,
-      company_size: companySize,
-      status: "private",
-      checked: false,
-    });
+    if (captcha === true){
+      response = await post("wp/v2/contact", {
+        title: fullName,
+        content: message,
+        email: email,
+        company_name: companyName,
+        company_size: companySize,
+        status: "private",
+        checked: false,
+      });
+    }
+    
 
     if (response.id) {
       setFullName("");
@@ -184,6 +210,11 @@ const ContactForm = () => {
           value={message}
         ></textarea>
       </label>
+      <ReCAPTCHA
+        sitekey={sitekey}
+        onChange={handleRecaptchaChange}
+        ref={recaptchaRef}
+      />
       <p
         className={`form__message ${
           sent ? "form__message--success" : "form__message--error"

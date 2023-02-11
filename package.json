@@ -15,14 +15,14 @@
     "graphql": "^16.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-google-recaptcha": "^2.1.0",
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
     "sass": "^1.57.1",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    
-    "start": "craco start",
+    "start": "export HTTPS=true&&SSL_CRT_FILE=cert.pem&&SSL_KEY_FILE=key.pem craco start",
     "build": "craco build && rmdir /s /q public_html && move build public_html",
     "build-mac": "craco build && rm -rf public_html && mv build public_html",
     "test": "craco test",
