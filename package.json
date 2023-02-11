@@ -22,7 +22,8 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "export HTTPS=true&&SSL_CRT_FILE=cert.pem&&SSL_KEY_FILE=key.pem craco start",
+    "start": "craco start",
+    "start-mac": "export HTTPS=true&&SSL_CRT_FILE=cert.pem&&SSL_KEY_FILE=key.pem craco start",
     "build": "craco build && rmdir /s /q public_html && move build public_html",
     "build-mac": "craco build && rm -rf public_html && mv build public_html",
     "test": "craco test",

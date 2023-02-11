@@ -306,5 +306,9 @@ $color_green: #20976c;
     &--error {
       color: $color__error;
     }
+
+    &--hidden {
+      display: none;
+    }
   }
 }

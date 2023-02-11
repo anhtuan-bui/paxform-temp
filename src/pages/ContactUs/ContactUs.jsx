@@ -1,9 +1,21 @@
-import React, { Component, createRef, useEffect, useState } from "react";
+import React, {
+  Component,
+  createRef,
+  Fragment,
+  useState,
+} from "react";
 import "./ContactUs.scss";
-import Button from "../../components/Button/Button";
+import PfButton from "../../components/PfButton/PfButton";
 import post from "../../lib/restApi";
 import { ReactComponent as ArrowRight } from "../../assets/images/arrow-right.svg";
 import ReCAPTCHA from "react-google-recaptcha";
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+} from "@mui/material";
 
 export default class ContactUs extends Component {
   render() {
@@ -93,45 +105,57 @@ export default class ContactUs extends Component {
 
 const ContactForm = () => {
   const sitekey = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
-  const secretKey = process.env.REACT_APP_RECAPTCHA_SECRET_KEY;
+  let alerts = {
+    fullName: "Please enter your full name",
+    email: "Please enter your email address",
+    companyName: "Please enter your company name",
+    companySize: "Please enter your company size",
+    message: "Please enter your message",
+    captcha: "Please verify that you are not a robot",
+  };
 
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [companySize, setCompanySize] = useState("");
   const [message, setMessage] = useState("");
-  const [alert, setAlert] = useState("");
-  const [sent, setSent] = useState(false);
-  const [captcha, setCaptcha] = useState(null);
+  const [alertMessage, setAlertMessage] = useState(false);
+  const [captcha, setCaptcha] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const recaptchaRef = createRef();
 
   let response = {};
 
   const fetchCaptcha = async () => {
-    const options = {
-      method: "POST",
-    };
-
     const captchaToken = recaptchaRef.current.getValue();
 
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        token: captchaToken,
+      }),
+    };
+
     const res = await fetch(
-      `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captchaToken}`,
+      `https://wp.paxform.com/wp-json/recaptcha/v2/verification`,
       options
     );
-    // const data = await response.json();
-    console.log(res);
-    setCaptcha(res.ok);
+    const data = await res.json();
+    return data.success;
   };
 
   const handleRecaptchaChange = async () => {
-    await fetchCaptcha();
+    setCaptcha(await fetchCaptcha());
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (captcha === true){
+    if (captcha === true) {
       response = await post("wp/v2/contact", {
         title: fullName,
         content: message,
@@ -141,88 +165,131 @@ const ContactForm = () => {
         status: "private",
         checked: false,
       });
+    } else {
+      setAlertMessage(true);
     }
-    
 
     if (response.id) {
-      setFullName("");
-      setEmail("");
-      setCompanyName("");
-      setCompanySize("");
-      setMessage("");
-
-      setSent(true);
-      setAlert("Messenge sent successfully");
+      setModalOpen(true);
     } else {
-      setAlert(response.message);
-      setSent(false);
+      setAlertMessage(true);
     }
   };
+
+  const handleModalClose = () => {
+    setModalOpen(false);
+    window.location.reload();
+  };
+
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        <strong>Full name</strong>
-        <input
-          type="text"
-          placeholder="Full Name"
-          onChange={(e) => setFullName(e.target.value)}
-          value={fullName}
+    <Fragment>
+      <form onSubmit={handleSubmit}>
+        <label>
+          <strong>Full name</strong>
+          <input
+            type="text"
+            placeholder="Full Name"
+            onChange={(e) => setFullName(e.target.value)}
+            value={fullName}
+            required
+          />
+          <p
+            className={`form__message form__message--error
+             ${fullName || !alertMessage ? "form__message--hidden" : ""}`}
+          >
+            {alerts.fullName}
+          </p>
+        </label>
+        <label>
+          <strong>Email</strong>
+          <input
+            type="email"
+            placeholder="example@email.com"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            required
+          />
+          <p
+            className={`form__message form__message--error ${
+              email || !alertMessage ? "form__message--hidden" : ""
+            }`}
+          >
+            {alerts.email}
+          </p>
+        </label>
+        <label>
+          <strong>Company name</strong>
+          <input
+            type="text"
+            placeholder="Company Name"
+            onChange={(e) => setCompanyName(e.target.value)}
+            value={companyName}
+          />
+        </label>
+        <label>
+          <strong>Company size</strong>
+          <select
+            onChange={(e) => setCompanySize(e.target.value)}
+            value={companySize}
+          >
+            <option value="" disabled>
+              Select a range of employees
+            </option>
+            <option value="1 - 10">1 - 10</option>
+            <option value="10 - 100">10 - 100</option>
+            <option value="100 - 1000">100 - 1000</option>
+            <option value="Over 1000">Over 1000</option>
+          </select>
+        </label>
+        <label>
+          <strong>Message</strong>
+          <textarea
+            placeholder="Message"
+            onChange={(e) => setMessage(e.target.value)}
+            value={message}
+            required
+          ></textarea>
+          <p
+            className={`form__message form__message--error
+             ${message || !alertMessage ? "form__message--hidden" : ""}`}
+          >
+            {alerts.message}
+          </p>
+        </label>
+        <ReCAPTCHA
+          className="recaptcha"
+          sitekey={sitekey}
+          onChange={handleRecaptchaChange}
+          ref={recaptchaRef}
         />
-      </label>
-      <label>
-        <strong>Email</strong>
-        <input
-          type="email"
-          placeholder="example@email.com"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        />
-      </label>
-      <label>
-        <strong>Company name</strong>
-        <input
-          type="text"
-          placeholder="Company Name"
-          onChange={(e) => setCompanyName(e.target.value)}
-          value={companyName}
-        />
-      </label>
-      <label>
-        <strong>Company size</strong>
-        <select
-          onChange={(e) => setCompanySize(e.target.value)}
-          value={companySize}
+        <p
+          className={`form__message form__message--error
+           ${captcha || !alertMessage ? "form__message--hidden" : ""}`}
         >
-          <option value="" disabled>
-            Select a range of employees
-          </option>
-          <option value="1 - 10">1 - 10</option>
-          <option value="10 - 100">10 - 100</option>
-          <option value="100 - 1000">100 - 1000</option>
-          <option value="Over 1000">Over 1000</option>
-        </select>
-      </label>
-      <label>
-        <strong>Message</strong>
-        <textarea
-          placeholder="Message"
-          onChange={(e) => setMessage(e.target.value)}
-          value={message}
-        ></textarea>
-      </label>
-      <ReCAPTCHA
-        sitekey={sitekey}
-        onChange={handleRecaptchaChange}
-        ref={recaptchaRef}
-      />
-      <p
-        className={`form__message ${
-          sent ? "form__message--success" : "form__message--error"
-        }`}
-      >
-        {alert}
-      </p>
-      <Button text="Send Message" type="flat arrow submit" color="white" />
-    </form>
+          {alerts.captcha}
+        </p>
+
+        <br />
+        <PfButton
+          text="Send Message"
+          type="flat arrow submit"
+          color="white"
+          buttonType="submit"
+        />
+      </form>
+      <Dialog onClose={handleModalClose} open={modalOpen}>
+        <DialogTitle>Contact Form</DialogTitle>
+        <DialogContent>
+          <p>
+            Your message has been sent successfully!
+            <br />
+            Thank you, we will return to you shortly.
+          </p>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleModalClose}>Close</Button>
+        </DialogActions>
+      </Dialog>
+    </Fragment>
   );
 };

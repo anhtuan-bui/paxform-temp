@@ -22,6 +22,7 @@ export default function PfButton(props) {
           backgroundColor: "#18835c",
         },
       }}
+      type={props.buttonType}
     >
       {props.text}
     </Button>
