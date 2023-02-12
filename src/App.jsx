@@ -1,23 +1,24 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { Suspense, useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { ApolloProvider } from "@apollo/client/react";
 import client from "./configurations/apollo";
 import getToken from "./lib/clientToken";
 
 import Layout from "./pages/Layout/Layout";
-import Legal from "./pages/Legal/Legal";
-import Home from "./pages/Home/Home";
-import ContactUs from "./pages/ContactUs/ContactUs";
-import NotFound from "./pages/NotFound/NotFound";
+// import Legal from "./pages/Legal/Legal";
+// import Home from "./pages/Home/Home";
+// import ContactUs from "./pages/ContactUs/ContactUs";
+// import NotFound from "./pages/NotFound/NotFound";
 
 import { createTheme, ThemeProvider } from "@mui/material";
 
 import Inter from "./assets/fonts/Inter/static/Inter-Regular.ttf";
 
-// const Home = lazy(() => import("./pages/Home/Home"));
-// const ContactUs = lazy(() => import("./pages/ContactUs/ContactUs"));
-// const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
+const Home = lazy(() => import("./pages/Home/Home"));
+const ContactUs = lazy(() => import("./pages/ContactUs/ContactUs"));
+const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
+const Legal = lazy(() => import("./pages/Legal/Legal"));
 
 const theme = createTheme({
   typography: {

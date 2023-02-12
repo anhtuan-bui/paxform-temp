@@ -4,68 +4,69 @@ body {
   padding-right: 0 !important;
 }
 
-.hero {
-  background: linear-gradient(90.46deg, #0a61b4 0.42%, #074581 99.63%);
-  position: relative;
-  top: -1px;
-  padding-top: rem(150);
-  padding-bottom: rem(150);
-
-
-  &__container {
+.legal {
+  .hero {
+    background: linear-gradient(90.46deg, #0a61b4 0.42%, #074581 99.63%);
     position: relative;
-    z-index: 1100;
-  }
+    top: -1px;
+    padding-top: rem(150);
+    padding-bottom: rem(150);
 
-  &__title {
-    color: white;
-    font-size: rem(64);
-    font-weight: 400;
-    margin-top: 0;
-    text-transform: capitalize;
-
-    @include larger {
-      font-size: 60px;
+    &__container {
+      position: relative;
+      z-index: 1100;
     }
 
-    @include large {
-      font-size: 54px;
-    }
+    &__title {
+      color: white;
+      font-size: rem(64);
+      font-weight: 400;
+      margin-top: 0;
+      text-transform: capitalize;
 
-    @include medium {
-      font-size: 48px;
-    }
-
-    @include small {
-      font-size: 42px;
-    }
-
-    @include extraSmall {
-      font-size: 36px;
-    }
-  }
-
-  &__background {
-    img {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: rem(330);
-      z-index: 1050;
-      min-width: 1440px;
-
-      @include extraLarge {
-        left: 50%;
-        transform: translateX(-50%);
+      @include larger {
+        font-size: 60px;
       }
 
       @include large {
-        height: rem(310);
+        font-size: 54px;
+      }
+
+      @include medium {
+        font-size: 48px;
+      }
+
+      @include small {
+        font-size: 42px;
       }
 
       @include extraSmall {
-        height: rem(280);
+        font-size: 36px;
+      }
+    }
+
+    &__background {
+      img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: rem(330);
+        z-index: 1050;
+        min-width: 1440px;
+
+        @include extraLarge {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        @include large {
+          height: rem(310);
+        }
+
+        @include extraSmall {
+          height: rem(280);
+        }
       }
     }
   }
@@ -127,7 +128,7 @@ body {
 
 .sidebar {
   flex: 1 1 25%;
-  
+
   @include small {
     box-sizing: border-box;
     padding: 1rem 2rem 1rem 1rem;

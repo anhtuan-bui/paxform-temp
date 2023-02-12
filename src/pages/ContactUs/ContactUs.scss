@@ -9,6 +9,12 @@ $color_green: #20976c;
     position: relative;
     top: -2px;
     background: linear-gradient(90.46deg, #0a61b4 0.35%, #074581 99.56%);
+    padding-top: rem(150);
+    padding-bottom: rem(150);
+
+    @include small {
+      padding-top: rem(100);
+    }
     &__wrapper {
       position: relative;
       padding-top: rem(20);
@@ -92,7 +98,7 @@ $color_green: #20976c;
       box-sizing: border-box;
       text-align: left;
       z-index: 1100;
-      
+
       @include medium {
         width: 80%;
         left: 50%;
@@ -147,8 +153,7 @@ $color_green: #20976c;
 
           & > select {
             appearance: none;
-            background: url("../../assets/images/arrow-down.svg")
-              no-repeat;
+            background: url("../../assets/images/arrow-down.svg") no-repeat;
             background-size: 12px;
             background-position: calc(100% - 20px) center;
             background-repeat: no-repeat;
@@ -317,4 +322,3 @@ $color_green: #20976c;
     }
   }
 }
-
