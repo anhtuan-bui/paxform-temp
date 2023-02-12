@@ -2,6 +2,7 @@ import React, {
   Component,
   createRef,
   Fragment,
+  useEffect,
   useState,
 } from "react";
 import "./ContactUs.scss";
@@ -111,7 +112,7 @@ const ContactForm = () => {
     companyName: "Please enter your company name",
     companySize: "Please enter your company size",
     message: "Please enter your message",
-    captcha: "Please verify that you are not a robot",
+    captcha: "Verify that you are not a robot",
   };
 
   const [fullName, setFullName] = useState("");
@@ -122,6 +123,7 @@ const ContactForm = () => {
   const [alertMessage, setAlertMessage] = useState(false);
   const [captcha, setCaptcha] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const [sent, setSent] = useState(false);
 
   const recaptchaRef = createRef();
 
@@ -155,7 +157,8 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (captcha === true) {
+    if (captcha && !sent) {
+      setSent(true);
       response = await post("wp/v2/contact", {
         title: fullName,
         content: message,
@@ -165,7 +168,7 @@ const ContactForm = () => {
         status: "private",
         checked: false,
       });
-    } else {
+    } else if (!captcha) {
       setAlertMessage(true);
     }
 
@@ -180,6 +183,44 @@ const ContactForm = () => {
     setModalOpen(false);
     window.location.reload();
   };
+
+  const setFormBoxWrapperHeight = () => {
+    const formBox = document.querySelector(".form__box");
+    const formBoxHeight = formBox.offsetHeight;
+    formBox.parentElement.style.height = `${formBoxHeight - 320}px`;
+  };
+
+  const handleFormBoxWrapperHeight = () => {
+    const iframe = document.getElementsByTagName("iframe")[0];
+    if (iframe) {
+      setFormBoxWrapperHeight();
+    } else {
+      let observer = new MutationObserver(() => {
+        const iframe = document.getElementsByTagName("iframe")[0];
+        if (iframe) {
+          removeObserver();
+          setFormBoxWrapperHeight();
+        }
+      });
+      observer.observe(document, { subtree: true, childList: true });
+
+      const removeObserver = () => {
+        if (observer) {
+          observer.disconnect();
+          observer = null;
+        }
+      };
+    }
+  };
+
+  useEffect(() => {
+    handleFormBoxWrapperHeight();
+    window.addEventListener("resize", handleFormBoxWrapperHeight);
+
+    return () => {
+      window.removeEventListener("resize", handleFormBoxWrapperHeight);
+    };
+  });
 
   return (
     <Fragment>
