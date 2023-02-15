@@ -33,9 +33,9 @@ export default function Footer() {
           <p className="footer__copyright">
             <span>© 2023 Paxform. All rights reserved.</span>
             <span className="footer__copyright-s">|</span>
-            <Link to="/contact" onClick={scrollTop}>
+            <a href="/contact" onClick={scrollTop}>
               Contact Us
-            </Link>
+            </a>
             <FooterTermLink />
           </p>
           <p className="footer__syd">
@@ -50,34 +50,10 @@ export default function Footer() {
 const linkSlug = "terms-of-use";
 
 const FooterTermLink = () => {
-  // let categorySlug = "";
-  // let linkSlug = "";
-  // const { loading, error, data } = useQuery(GET_LEGAL_CATEGORIES);
-
-  // if (loading) {
-  //   return <Skeleton width={200} />;
-  // }
-
-  // if (error) {
-  //   return;
-  // }
-
-  // const legalCategories = data.legalCategories?.nodes;
-  // let arraySort = [...legalCategories];
-  // arraySort.sort((a, b) => b.name.localeCompare(a.name));
-
-  // for (let i = 0; i < arraySort.length; i++) {
-  //   // categorySlug = arraySort[i].slug;
-  //   if (arraySort[i].legals.nodes.length > 0) {
-  //     linkSlug = arraySort[i].legals.nodes[0].slug;
-  //     break;
-  //   }
-  // }
 
   return (
     <Fragment>
       <span className="footer__copyright-s">|</span>
-      {/* <Link to={`/legal/${linkSlug}`} onClick={scrollTop}> */}
       <Link to={`/legal/${linkSlug}`} onClick={scrollTop}>
         Read our privacy policy, terms of use and other legal agreements
       </Link>
