@@ -6,6 +6,7 @@ html {
   font-family: $font_family__Inter, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: $font_size__desktop;
   color: $color_main__text;
+  background-color: white ;
   overflow-x: hidden;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -22,6 +23,10 @@ html {
 
 body {
   overflow-y: hidden;
+}
+
+main {
+  background-color: white;
 }
 
 h1,
