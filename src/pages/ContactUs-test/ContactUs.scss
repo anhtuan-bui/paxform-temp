@@ -1,0 +1,324 @@
+@import "../../styles/styles.scss";
+$color_white: #fff;
+$color_blue: #0a61b4;
+$color_light-grey: #f6f6f6;
+$color_grey: #2f4356;
+$color_green: #20976c;
+.contact {
+  .hero {
+    position: relative;
+    top: -2px;
+    background: linear-gradient(90.46deg, #0a61b4 0.35%, #074581 99.56%);
+    padding-top: rem(150);
+    padding-bottom: rem(150);
+
+    @include small {
+      padding-top: rem(100);
+    }
+    &__wrapper {
+      position: relative;
+      padding-top: rem(20);
+      padding-bottom: rem(100);
+      text-align: center;
+      box-sizing: border-box;
+      display: flex;
+      gap: rem(60);
+
+      @include larger {
+        gap: rem(28);
+      }
+      @include medium {
+        // padding-top: 0;
+        // padding-bottom: 50%;
+        flex-direction: column;
+      }
+
+      // @include small {
+      //   padding-bottom: 70%;
+      // }
+
+      // @include extraSmall {
+      //   padding-bottom: 100%;
+      // }
+    }
+    &__name {
+      margin: rem(20) 0;
+      opacity: 50%;
+      letter-spacing: rem(2);
+      font-weight: 600;
+      font-size: rem(14);
+      text-transform: uppercase;
+    }
+    &__content {
+      // padding: 0 $padding__collumn;
+      text-align: left;
+      color: $color_white;
+      flex: 1 1 50%;
+      @include medium {
+        text-align: center;
+      }
+      h1,
+      p {
+        max-width: 100%;
+      }
+    }
+    &__title {
+      font-size: rem(42);
+      margin-bottom: rem(24);
+      margin-top: 0;
+      @include extraLarge {
+        font-size: rem(38);
+      }
+      @include large {
+        font-size: rem(34);
+      }
+      @include medium {
+        font-size: rem(42);
+      }
+      @include small {
+        font-size: rem(36);
+      }
+      @include extraSmall {
+        font-size: rem(28);
+      }
+    }
+    &__description {
+      margin-bottom: rem(50);
+      line-height: rem(25);
+    }
+    .form__box {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      padding: rem(32);
+      border-radius: rem(24);
+      background: $color_white;
+      box-shadow: 0px 20px 30px rgba(3, 26, 48, 0.08);
+      box-sizing: border-box;
+      text-align: left;
+      z-index: 1100;
+
+      @include medium {
+        width: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      @include small {
+        width: 100%;
+      }
+
+      &-wrapper {
+        flex: 1 1 50%;
+        position: relative;
+        width: 100%;
+
+        @include medium {
+          flex: unset;
+        }
+      }
+
+      & > form {
+        & > label {
+          display: block;
+          margin-bottom: rem(20);
+          &:last-child {
+            margin-bottom: 0;
+          }
+          & > strong {
+            display: block;
+            margin-bottom: rem(6);
+          }
+          & > input {
+            display: block;
+            width: 100%;
+            height: rem(40);
+            padding: rem(16);
+            border: none;
+            border-radius: rem(8);
+            background: $color_light-grey;
+            font-size: rem(14);
+            box-sizing: border-box;
+          }
+          & > select,
+          & > textarea {
+            width: 100%;
+            padding: rem(16);
+            border: none;
+            border-radius: rem(8);
+            background: $color_light-grey;
+            font-size: rem(14);
+            box-sizing: border-box;
+          }
+
+          & > select {
+            appearance: none;
+            background: url("../../assets/images/arrow-down.svg") no-repeat;
+            background-size: 12px;
+            background-position: calc(100% - 20px) center;
+            background-repeat: no-repeat;
+            background-color: $color_light-grey;
+          }
+
+          & > input:focus,
+          & > select:focus,
+          & > textarea:focus {
+            outline: 2px solid $color_green;
+          }
+        }
+        & > .button {
+          margin-top: rem(40);
+          @include small {
+            width: 100%;
+            margin: rem(40) 0 0;
+            padding: rem(15) 0;
+          }
+        }
+      }
+    }
+  }
+
+  .help {
+    position: relative;
+    padding-top: rem(200);
+    padding-bottom: rem(64);
+    background: $color_white;
+
+    &-name {
+      display: block;
+      padding: 0 $padding__collumn;
+      font-size: rem(14);
+      font-weight: bold;
+      letter-spacing: 0.14em;
+      text-align: center;
+      text-transform: capitalize;
+      color: $color_blue;
+    }
+    &-title {
+      padding: 0 $padding__collumn;
+      margin: rem(24) auto rem(54);
+      font-size: rem(38);
+      text-align: center;
+      @include large {
+        font-size: rem(34);
+      }
+      @include medium {
+        font-size: rem(32);
+      }
+      @include small {
+        font-size: rem(30);
+      }
+    }
+    &__wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: rem(28);
+      @include small {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+    &__box {
+      &__inner {
+        padding: rem(24);
+        border-radius: rem(16);
+        background: $color_light-grey;
+      }
+      &-title {
+        display: block;
+        position: relative;
+        height: rem(50);
+        padding: rem(12) 0 0 rem(70);
+        font-size: rem(20);
+        color: $color_grey;
+        &::before {
+          display: inline-block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: rem(50);
+          height: rem(50);
+          border-radius: rem(50);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-color: #ddeeff;
+          content: "";
+        }
+        @include medium {
+          font-size: rem(16);
+        }
+        @include small {
+          height: rem(32);
+        }
+      }
+      &-desc {
+        font-size: rem(16);
+        margin: rem(16) 0;
+        color: $color_grey;
+      }
+      &-link {
+        display: inline-block;
+        padding-right: rem(15);
+
+        background-size: rem(5);
+        font-size: rem(20);
+        text-decoration: none;
+        color: $color_green;
+
+        svg {
+          path {
+            stroke: $color_green;
+          }
+        }
+
+        &:hover {
+          transform: all 0.3s ease-out;
+          color: $color_blue;
+
+          svg {
+            path {
+              stroke: $color_blue;
+            }
+          }
+        }
+      }
+      &:nth-child(1) {
+        .help__box-title::before {
+          background-image: url("../../assets/images/icon-text.svg");
+        }
+      }
+      &:nth-child(2) {
+        .help__box-title::before {
+          background-image: url("../../assets/images/icon-email.svg");
+        }
+      }
+      &:nth-child(3) {
+        .help__box-title::before {
+          background-image: url("../../assets/images/icon-call.svg");
+        }
+      }
+      &:nth-child(4) {
+        .help__box-title::before {
+          background-image: url("../../assets/images/icon-chat.svg");
+        }
+      }
+    }
+  }
+}
+
+.form {
+  &__message {
+    font-size: 0.875rem;
+
+    &--success {
+      color: $color__success;
+    }
+
+    &--error {
+      color: $color__error;
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+}

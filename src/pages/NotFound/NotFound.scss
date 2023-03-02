@@ -5,10 +5,17 @@
   position: relative;
   top: 0px;
   background: linear-gradient(90.15deg, #0a61b4 0.35%, #074581 100.1%);
+  padding-top: rem(20);
+  padding-bottom: rem(20);
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &__code {
     margin-top: 0;
-    margin-bottom: rem(63);
+    margin-bottom: rem(16);
     font-size: rem(300);
     font-weight: 400;
     // line-height: rem(360);

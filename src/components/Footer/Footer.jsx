@@ -1,7 +1,7 @@
 // import { useQuery } from "@apollo/client";
 // import { Skeleton } from "@mui/material";
-import React, { Fragment, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { Fragment, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import syd from "../../assets/images/syd.svg";
 import client from "../../configurations/apollo";
 import {
@@ -14,15 +14,15 @@ import "./Footer.scss";
 import { scrollTop } from "../../lib/helper";
 
 export default function Footer() {
-  const location = useLocation().pathname.split("/");
-  const notFound = location[location.length - 1];
+  const [notFound, setNotFound] = useState("");
 
   useEffect(() => {
+    setNotFound(document.querySelector(".not_found"));
+    // hide footer on not found page
     prefetchLegal();
-  });
+  }, []);
 
-  // hide footer on not found page
-  if (notFound === "not-found") {
+  if (notFound) {
     return null;
   }
 
@@ -50,7 +50,6 @@ export default function Footer() {
 const linkSlug = "terms-of-use";
 
 const FooterTermLink = () => {
-
   return (
     <Fragment>
       <span className="footer__copyright-s">|</span>
