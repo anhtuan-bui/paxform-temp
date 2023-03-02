@@ -19,6 +19,9 @@ const Home = lazy(() => import("./pages/Home/Home"));
 const ContactUs = lazy(() => import("./pages/ContactUs/ContactUs"));
 const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
 const Legal = lazy(() => import("./pages/Legal/Legal"));
+const DealfollowFormTest = lazy(() =>
+  import("./pages/DealfollowFormTest/DealfollowFormTest")
+);
 
 const theme = createTheme({
   typography: {
@@ -64,6 +67,10 @@ function App() {
                 <Route index element={<Home />} />
                 <Route path="/legal" element={<Legal />} />
                 <Route path="/contact" element={<ContactUs />} />
+                <Route
+                  path="/dealfollow-form-test"
+                  element={<DealfollowFormTest />}
+                />
                 <Route path="/legal/:slug" element={<Legal />} />
                 <Route path="/legal/:categorySlug/:slug" element={<Legal />} />
                 <Route path="*" element={<NotFound />} />
