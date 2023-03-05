@@ -26,6 +26,7 @@ body {
   background-color: white !important;
 }
 
+
 h1,
 h2,
 h3,
@@ -33,4 +34,8 @@ h4,
 h5,
 h6 {
   font-family: $font_family__GotamRoundedBold, "Candara",'Segoe UI', Tahoma, Geneva, Verdana, Arial, sans-serif;
+}
+
+.page_align {
+  min-height: calc(100vh - 150px);
 }
