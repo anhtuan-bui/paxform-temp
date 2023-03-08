@@ -19,6 +19,10 @@ import {
 } from "@mui/material";
 
 export default class ContactUs extends Component {
+  handleChatNowButtonClick() {
+    const chatButton = document.getElementsByClassName("chat-button")[0];
+    chatButton.click();
+  }
   render() {
     return (
       <div className="page_align">
@@ -105,6 +109,7 @@ export default class ContactUs extends Component {
                       id="chat_now"
                       className="help__box-link"
                       href="#chat_now"
+                      onClick={this.handleChatNowButtonClick}
                     >
                       Chat now <ArrowRight />
                     </a>
