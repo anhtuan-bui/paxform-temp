@@ -26,11 +26,11 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://dealfollow.com/js/jquery-cookie.js"></script>
-    <script src="https://dealfollow.com/js/chattle_client.js"></script>
+    <script src="https://dealfollow.com/js/modula_client.js?<?php echo time(); ?>"></script>
     <script>
       var oid = 3;
       var svr = "https://dealfollow.com";
-      function file_get_contents_v2(filename) {
+      function file_get_contents(filename) {
         fetch(filename)
           .then((resp) => resp.text())
           .then((data) => {
@@ -38,7 +38,7 @@
             chat_client(oid, svr);
           });
       }
-      file_get_contents_v2("https://dealfollow.com/chat-client/oid/" + oid);
+      file_get_contents("https://dealfollow.com/chat-client-v2/oid/" + oid);
     </script>
     <!-- ########################## -->
   </body>
