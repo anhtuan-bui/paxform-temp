@@ -1,0 +1,206 @@
+@import "../../styles/styles.scss";
+
+$color_white: #fff;
+$color_blue: #0a61b4;
+$color_light-grey: #f6f6f6;
+$color_grey: #2f4356;
+$color_green: #20976c;
+$color_outline: lighten($color__primary, 45%);
+
+body {
+  padding-right: 0 !important;
+}
+
+.legal {
+  .hero {
+    background: linear-gradient(90.46deg, #0a61b4 0.42%, #074581 99.63%);
+    position: relative;
+    top: -1px;
+    padding-top: rem(160);
+    padding-bottom: rem(150);
+
+    &__container {
+      position: relative;
+      z-index: 1100;
+    }
+
+    &__title {
+      color: white;
+      font-size: rem(48);
+      font-weight: 400;
+      margin-top: 0;
+      text-transform: capitalize;
+
+      @include large {
+        font-size: 42px;
+      }
+
+      @include medium {
+        font-size: 36px;
+      }
+    }
+
+    &__background {
+      img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: rem(330);
+        z-index: 1050;
+        min-width: 1440px;
+
+        @include extraLarge {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        @include large {
+          height: rem(310);
+        }
+
+        @include extraSmall {
+          height: rem(280);
+        }
+      }
+    }
+  }
+}
+
+.form {
+  margin-top: rem(60);
+  &__description {
+    text-align: center;
+    line-height: 1.8;
+  }
+  &__message {
+    font-size: 0.875rem;
+
+    &--success {
+      color: $color__success;
+    }
+
+    &--error {
+      color: $color__error;
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+}
+.data_request {
+  max-width: rem(800);
+  margin: auto;
+
+  &__required {
+    color: $color__error;
+  }
+
+  &__button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    button {
+      width: rem(150);
+      max-width: 100%;
+    }
+  }
+  &__checkbox {
+    &:checked {
+      appearance: initial;
+    }
+
+    &-label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      input[type="checkbox"] {
+        appearance: none;
+      }
+
+      input[type="checkbox"]:before {
+        font-family: "FontAwesome";
+        content: "\f00c";
+        font-size: 15px;
+        color: transparent !important;
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        border-radius: rem(5);
+        border: 2px solid $color_outline;
+      }
+
+      input[type="checkbox"]:checked:before {
+        color: $color__primary !important;
+      }
+    }
+  }
+  & > label {
+    display: block;
+    margin-bottom: rem(20);
+    &:last-child {
+      margin-bottom: 0;
+    }
+    & > strong {
+      display: block;
+      margin-bottom: rem(6);
+    }
+    & > input {
+      display: block;
+      width: 100%;
+      height: rem(40);
+      padding: rem(16);
+      margin-top: rem(16);
+      border: none;
+      border-radius: rem(8);
+      background: $color_light-grey;
+      font-size: rem(14);
+      box-sizing: border-box;
+      outline: 2px solid $color_outline;
+    }
+    & > select,
+    & > textarea {
+      width: 100%;
+      padding: rem(16);
+      border: none;
+      border-radius: rem(8);
+      background: $color_light-grey;
+      font-size: rem(14);
+      box-sizing: border-box;
+      outline: 2px solid $color_outline;
+    }
+
+    & > select {
+      appearance: none;
+      background: url("../../assets/images/arrow-down.svg") no-repeat;
+      background-size: 12px;
+      background-position: calc(100% - 20px) center;
+      background-repeat: no-repeat;
+      background-color: $color_light-grey;
+    }
+
+    & > input:focus,
+    & > select:focus,
+    & > textarea:focus {
+      outline: 2px solid $color_green;
+    }
+  }
+  & > .button {
+    margin-top: rem(40);
+    @include small {
+      width: 100%;
+      margin: rem(40) 0 0;
+      padding: rem(15) 0;
+    }
+  }
+  label,
+  p {
+    line-height: 1.8;
+  }
+  p {
+    text-align: center;
+  }
+}

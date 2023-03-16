@@ -17,6 +17,7 @@ import Inter from "./assets/fonts/Inter/static/Inter-Regular.ttf";
 
 const Home = lazy(() => import("./pages/Home/Home"));
 const ContactUs = lazy(() => import("./pages/ContactUs/ContactUs"));
+const DataRequestForm = lazy(() => import("./pages/DataRequest/DataRequest"));
 const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
 const Legal = lazy(() => import("./pages/Legal/Legal"));
 const DealfollowFormTest = lazy(() =>
@@ -67,6 +68,7 @@ function App() {
                 <Route index element={<Home />} />
                 <Route path="/legal" element={<Legal />} />
                 <Route path="/contact" element={<ContactUs />} />
+                <Route path="/data-subject-access-request-form" element={<DataRequestForm />} />
                 <Route
                   path="/dealfollow-form-test"
                   element={<DealfollowFormTest />}
